@@ -88,8 +88,6 @@ transition: fade-out
 <br>
 
 
-Read more about [Why Slidev?](https://sli.dev/guide/why)
-
 
 <div class="abs-br m-6 flex gap-2">
   <a href="https://github.com/NullVoxPopuli/ember-resources" target="_blank" alt="GitHub"
@@ -97,6 +95,25 @@ Read more about [Why Slidev?](https://sli.dev/guide/why)
     <carbon-logo-github />
   </a>
 </div>
+
+<!-- -->
+
+---
+transition: fade-out
+---
+
+# These look familiar?
+
+When squinting, they kinda look like effects, yet are derived data, and effects cause performance issues by rendering more times than needed.
+Also, like hooks, in that they can be composed, and represent a value.
+
+    ```js 
+    const CurrentTime = resource(() => { /* ... */ });
+
+    export const FormattedTime = resource(({ use }) => {
+        return use(CurrentTime);
+    });
+    ```
 
 <!--
 You can have `style` tag in markdown to override the style for the current page.
