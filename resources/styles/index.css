@@ -1,0 +1,112 @@
+.fast-fact {
+  transform: 
+    skew(-15deg, -5deg)
+    translateY(-2.5rem)
+    ;
+
+  background-image: linear-gradient(
+    -225deg,
+    #551577 0%,
+    #cc107a 29%,
+    #ff1361 67%,
+    #661588 100%
+  );
+  background-size: auto auto;
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/**
+ *
+ * Normal adjustments
+ *
+ */
+
+.related-note {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+}
+.footnotes {
+  position: fixed;
+  bottom: 2rem;
+  right: 1rem;
+  font-size: 0.75rem;
+}
+
+code {
+  font-size: 0.90rem;
+}
+
+.code-polaris,
+.code-ember-min-usable {
+  position: relative;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.code-ember-min-usable:after,
+.code-polaris:after {
+  position: absolute;
+  bottom: 0.25rem;
+  right: 0.5rem;
+  font-style: italic;
+  text-align: right;
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.code-polaris:after {
+  content: "Polaris";
+}
+
+.code-ember-min-usable:after {
+  content: '3.25+';
+  font-size: 0.65rem;
+}
+
+/**
+ * Disclaimers, mostly
+ */
+
+.disclaimer-note,
+.disclaimer-note > p {
+  text-align: right;
+  font-size: 1.75rem;
+  font-style: italic;
+  line-height: 2.5rem;
+}
+
+.qr-code-list, .qr-code-list > p {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 0.5rem;
+}
+
+.min-content {
+  width: min-content;
+}
+
+.corner-br {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+img.qr {
+  max-height: 200px;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  filter: drop-shadow(0px 5px 10px rgba(0,0,0,0.75));
+  border-radius: 5px;
+  border: 1px solid #333;
+}

@@ -57,11 +57,14 @@ Pitch
 
 Ember Octane is missing primitives, and resources are one such primitive that make dealing working with custom reactive values much easier.
 
+Tools used for making this presentation
+- https://sli.dev/
+- https://www.the-qrcode-generator.com/
 
 -->
 
 
-# Resources<sup>2</sup>
+# Resources²
 
 Resources on Resources: the missing primitive.
 
@@ -76,6 +79,18 @@ Resources on Resources: the missing primitive.
 <!--
 The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
 -->
+
+---
+src: ./pages/intro/index.md
+---
+
+---
+src: ./pages/disclaimers/index.md 
+---
+
+---
+src: ./pages/primitives/index.md 
+---
 
 ---
 transition: fade-out
