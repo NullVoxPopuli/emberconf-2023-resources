@@ -84,7 +84,7 @@ layout: center
 
 <div class="related-note">Introduction</div>
 
-# My journey so far 
+# My <span v-click>programming</span> journey so far
 
 - 2002+: CSS / HTML / Geocities
 - 2003+: MySpace Customizations 🙃
@@ -103,3 +103,14 @@ layout: center
   and I've been using Ember.JS the longest so far.
 -->
 
+
+---
+transition: fade
+layout: center
+---
+
+<div class="related-note">Introduction</div>
+
+# My <span v-click>personal</span> stuff <span v-click>(cause it's fun?)</span>
+
+![My Partner](/pages/intro/partner.jpeg)
