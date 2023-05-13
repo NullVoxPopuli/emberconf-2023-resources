@@ -37,6 +37,30 @@ transition: slide-left
 css: unocss
 ---
 
+<!--
+  What was in the CFP?
+
+Details
+
+This talk will briefly cover 
+- the reactivity primitives, 
+- what problems resources solve, 
+- how Octane patterns aren't enough, 
+- and how Resources can effectively be used for solving different kinds of problems, 
+  and especially beyond the async function use case. 
+
+- Additionally, since resources are a non-core library, 
+  it'll be important to mention how easily code-moddable the existing resources are to other implementations, such as from Starbeam.
+
+
+Pitch
+
+Ember Octane is missing primitives, and resources are one such primitive that make dealing working with custom reactive values much easier.
+
+
+-->
+
+
 # Resources<sup>2</sup>
 
 Resources on Resources: the missing primitive.
@@ -58,6 +82,36 @@ transition: fade-out
 ---
 
 # What's a Resource?
+
+<!-- -->
+
+---
+transition: fade-out
+---
+
+# A Resource is like...
+
+a hook
+
+<!-- -->
+
+---
+transition: fade-out
+---
+
+# A Resource is like...
+
+a cached getter
+
+<!-- -->
+
+---
+transition: fade-out
+---
+
+# A Resource is like...
+
+a memoized cached getter hack
 
 <!-- -->
 
