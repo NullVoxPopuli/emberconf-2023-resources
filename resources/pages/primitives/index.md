@@ -6,12 +6,12 @@ layout: center
 # What are the reactive primitives in Ember? 
 
 <!-- 
-    - Values (or cells)
-    - Functions
-    - Modifiers
-    - Elements
-    ... and 
-    - Resources
+	- Values (or cells)
+	- Functions
+	- Modifiers
+	- Elements
+	... and 
+	- Resources
 
 -->
 
@@ -33,11 +33,11 @@ import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 
 class Demo extends Component {
-    @tracked value = 1;
+	@tracked value = 1;
 
-    <template>
-        {{this.value}}
-    </template>
+	<template>
+		{{this.value}}
+	</template>
 }
 ```
 
@@ -54,7 +54,7 @@ import { cell } from 'ember-resources';
 const value = cell(1);
 
 <template>
-    {{cell.current}}
+	{{cell.current}}
 </template>
 ```
 
@@ -74,22 +74,22 @@ const value = cell(1);
 
 ```js {all|11-16}
 function tracked(target, key, descriptor) { /* "legacy decorator" (stage 1) */
-    let cache = new WeakMap();
-    let getCell = (ctx) => {
-        let reactiveValue = cache.get(ctx);
-        if (!reactiveValue) {
-            cache.set(ctx, reactiveValue = cell(descriptor.initializer?.()));
-        }
-        return reactiveValue;
-    }
-    return {
-        get() { 
-          return getCell(this).current; 
-        },
-        set(value) { 
-          getCell(this).set(value); 
-        }
-    }
+	let cache = new WeakMap();
+	let getCell = (ctx) => {
+		let reactiveValue = cache.get(ctx);
+		if (!reactiveValue) {
+			cache.set(ctx, reactiveValue = cell(descriptor.initializer?.()));
+		}
+		return reactiveValue;
+	}
+	return {
+		get() { 
+		  return getCell(this).current; 
+		},
+		set(value) { 
+		  getCell(this).set(value); 
+		}
+	}
 }
 ```
 
@@ -124,13 +124,13 @@ import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 
 class Demo extends Component {
-    @tracked data = { greeting: 'Hello World!';
+	@tracked data = { greeting: 'Hello World!';
 
-    <template>
-        <pre>
-            {{ (JSON.stringify this.data null 4) }}
-        </pre>
-    </template>
+	<template>
+		<pre>
+			{{ (JSON.stringify this.data null 4) }}
+		</pre>
+	</template>
 }
 ```
 
@@ -145,15 +145,15 @@ import { cell } from 'ember-resources';
 const data = cell({ greeting: 'Hello World!' });
 
 <template>
-    {{ (JSON.stringify data null 4) }}
+	{{ (JSON.stringify data null 4) }}
 </template>
 ```
 
 <!--
 
-    In both of these examples, 
-    JSON.stringify is a function that many of us are familiar with.
-    Because functions are 
+	In both of these examples, 
+	JSON.stringify is a function that many of us are familiar with.
+	Because functions are 
 
 -->
 
@@ -174,7 +174,7 @@ const data = cell({ greeting: 'Hello World!' });
 
 ```js 
 <template>
-    
+	
 </template>
 ```
 
