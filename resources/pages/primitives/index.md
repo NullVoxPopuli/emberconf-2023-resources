@@ -93,6 +93,23 @@ function tracked(target, key, descriptor) { /* "legacy decorator" (stage 1) */
 }
 ```
 
+<!-- 
+
+The `@tracked` decorator could be thought of as a small wrapper
+around reactive values.
+
+!! click 
+
+The decorator only needs to provide native getter/setter functionality
+around the "reactive API".
+
+--
+
+This is not the real implementation, 
+but I think it could be -- or very close to this, conceptually.
+
+-->
+
 ---
 layout: two-cols
 ---
@@ -102,50 +119,43 @@ layout: two-cols
 
 ::left::
 
-<div class="code-polaris">
-
 ```js 
 import Component from '@glimmer/component';
+import { tracked } from '@glimmer/tracking';
 
 class Demo extends Component {
-    myFunction = () => 'Hello World!';
+    @tracked data = { greeting: 'Hello World!';
 
     <template>
-        {{ (this.myFunction) }}
+        <pre>
+            {{ (JSON.stringify this.data null 4) }}
+        </pre>
     </template>
 }
 ```
 
-</div>
-
-<br>
-<div class="code-ember-min-usable">
-
-```js 
-class Demo extends Component {
-    myFunction = () => 'Hello World!';
-}
-```
-```hbs 
-{{ (this.myFunction) }}
-```
-
-</div>
 
 ::right::
 
 
-<div class="code-polaris">
 
 ```js 
-const myFunction = () => 'Hello World!';
+import { cell } from 'ember-resources';
+
+const data = cell({ greeting: 'Hello World!' });
 
 <template>
-    {{ (myFunction) }}
+    {{ (JSON.stringify data null 4) }}
 </template>
 ```
 
-</div>
+<!--
+
+    In both of these examples, 
+    JSON.stringify is a function that many of us are familiar with.
+    Because functions are 
+
+-->
 
 
 ---

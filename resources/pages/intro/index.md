@@ -111,6 +111,23 @@ layout: center
 
 <div class="related-note">Introduction</div>
 
-# My <span v-click>personal</span> stuff <span v-click>(cause it's fun?)</span>
+# Things about me 
 
-![My Partner](/pages/intro/partner.jpeg)
+<div class="flex gap-2">
+<div style="max-width: 100px;">
+
+![My Partner](/pages/intro/partner.jpg)
+
+</div>
+<div style="max-height: 100px;max-width: 200px;">
+
+![BeatSaber screenshot](/pages/intro/beatsaber.png)
+
+</div>
+</div>
+
+<!-- 
+    This is a picture of my partner and favorite human.
+    
+    Outside of programming, I like video games, and swing dancing.
+-->
