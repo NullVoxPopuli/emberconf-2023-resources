@@ -1,18 +1,65 @@
 ---
 transition: fade-out
 layout: center
+preload: false
 ---
 
-# What are the reactive primitives in Ember? 
+<style>
+    .display-list li {
+        font-size: 2rem;
+    }
+</style>
+
+<h1 
+   v-motion
+  :initial="{ y: 75 }"
+  :enter="{ 
+    y: -100,
+    transition: {
+      delay: 500,
+    },
+  }"
+>What are the reactive primitives in Ember?</h1>
+
+<ul class="display-list">
+    <li v-click>Values</li>
+    <li v-click>Functions</li>
+    <li v-click>Modifiers</li>
+    <li v-click>Elements</li>
+    <li v-click>Resources</li>
+</ul>
 
 <!-- 
-	- Values (or cells)
-	- Functions
-	- Modifiers
-	- Elements
-	... and 
-	- Resources
+(Click through each one)
 
+- Values (or cells)
+- Functions
+- Modifiers
+- Elements
+... and 
+- Resources
+
+Ok, so what do I mean by these being primitives?
+
+-->
+
+---
+transition: fade-out
+layout: center
+---
+
+# Components are not primitives.
+
+<!-- 
+
+Components are not primitives.
+
+They wrappers of the primitives.
+Components wrap one or more 
+values, functions, modifiers, elements, and resources
+and components cannot alone, without these primitives.
+
+However each of the primitives can be used and defined in isolation.
 -->
 
 ---
