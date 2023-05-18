@@ -166,7 +166,7 @@ But I have written a tutorial using these concepts over at
 
 <div style="max-height: 100px">
 
-![Picture of the tutorial](pages/disclaimers/tutorial.png)
+![Picture of the tutorial](/pages/disclaimers/tutorial.png)
 
 </div>
 <img src="/pages/intro/tutorial.png" alt="QRCode to the Glimmer tutorial I made" class="qr" />

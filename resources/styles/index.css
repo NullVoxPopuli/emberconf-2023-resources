@@ -73,6 +73,10 @@ code {
   font-size: 0.65rem;
 }
 
+.slidev-layout.cover > svg.absolute {
+  display: none;
+}
+
 /**
  * Disclaimers, mostly
  */

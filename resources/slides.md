@@ -1,40 +1,25 @@
 ---
-# theme: academic
 theme: aneo
-# theme: dracula
 fonts:
   sans: Comfortaa
-
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
-background: https://source.unsplash.com/collection/94734566/1920x1080
-
-# apply any windi css classes to the current slide
-class: 'text-center'
-
-# https://sli.dev/custom/highlighters.html
+background: /pages/paul-wong-uKWdq9TcaiI-unsplash.jpg
+class: text-center
 highlighter: shiki
-
-# show line numbers in code blocks
 lineNumbers: false
-
-# some information about the slides, markdown enabled
-info: |
+info: >
   ## Resources on Resources  
+
 
   by Preston, for ember.
 
-  Source on [GitHub](https://github.com/NullVoxPopuli/presentation-2023-resources)
 
-# persist drawings in exports and build
+  Source on
+  [GitHub](https://github.com/NullVoxPopuli/presentation-2023-resources)
 drawings:
   persist: false
-
-# page transition
 transition: slide-left
-
-# use UnoCSS
 css: unocss
+title: Resources²
 ---
 
 <!--
@@ -63,6 +48,13 @@ Tools used for making this presentation
 
 -->
 
+<style>
+    * {
+         text-shadow: 0px 0px 4px rgb(0, 0, 0);
+         color: white;
+    }
+</style>
+
 
 # Resources²
 
@@ -75,9 +67,8 @@ Resources on Resources: the missing primitive.
   </a>
 </div>
 
-
 <!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
+Hello! We're going to have a look at Resources, which I believe are one of the core reactive primitives we've been missing. But first a quick introduction of myself -->
 -->
 
 ---
@@ -559,4 +550,3 @@ class: text-center
 ---
 layout: end
 ---
-
