@@ -68,13 +68,13 @@ layout: center
 # Links & QR Codes 🥳
 
 <!-- 
-    This presentation has links,
-    and is written to still be useful and 
-    have all the context when uploaded and read.
+This presentation has links,
+and is written to still be useful and 
+have all the context when uploaded and read.
 
-    However, when live, links aren't very helpful.
+However, when live, links aren't very helpful.
 
-    All links will have have QR Codes
+All links will have have QR Codes
 -->
 
 ---

@@ -68,8 +68,11 @@ Resources on Resources: the missing primitive.
 </div>
 
 <!--
-Hello! We're going to have a look at Resources, which I believe are one of the core reactive primitives we've been missing. But first a quick introduction of myself -->
+
+Hello! We're going to have a look at Resources, which I believe are one of the core reactive primitives we've been missing. But first a quick introduction of myself 
+
 -->
+
 
 ---
 src: ./pages/intro/index.md

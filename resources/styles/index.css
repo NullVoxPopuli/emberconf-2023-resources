@@ -73,7 +73,10 @@ code {
   font-size: 0.65rem;
 }
 
-.slidev-layout.cover > svg.absolute {
+.slidev-layout.cover > svg.absolute.bottom-12.left-1\/2.transform.\-translate-x-1\/2.w-auto.h-8 {
+  display: none;
+}
+.slidev-layout .absolute.left-8.flex.flex-row.gap-4.items-end {
   display: none;
 }
 

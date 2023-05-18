@@ -33,14 +33,14 @@ layout: center
 
 <!--
 
-    All examples use the new gjs format.
+All examples use the new gjs format.
 
-    This is, in part, so that I can keep the slides concise, and focused, 
-    and not have to specify the file paths of multiple snippets which need to be 
-    stitched together to create a single concept.
+This is, in part, so that I can keep the slides concise, and focused, 
+and not have to specify the file paths of multiple snippets which need to be 
+stitched together to create a single concept.
 
-    Thankfully!, we had a talk yesterday on this new format,
-    but here is a quick tl;dr: for helping translate between old and new in your head:
+Thankfully!, we had a talk yesterday on this new format,
+but here is a quick tl;dr: for helping translate between old and new in your head:
 
 -->
 
@@ -126,28 +126,28 @@ The content of the component
 </div>
 
 <!-- 
-    Whenever you see a `<template>` block by itself, 
-    that is most similar to a template-only-component.
+Whenever you see a `<template>` block by itself, 
+that is most similar to a template-only-component.
 
-    !! click 
+!! click 
 
-    The key thing here is that this is always a component, 
-    and you always know where things are defined.
+The key thing here is that this is always a component, 
+and you always know where things are defined.
 
-    !!click
+!!click
 
-    Whenever you see a `<template>` block within a class-body, that's equivelant to a 
-    glimmer-component with a class -- normally two separate files.
+Whenever you see a `<template>` block within a class-body, that's equivelant to a 
+glimmer-component with a class -- normally two separate files.
 
-    !!click
+!!click
 
-    The idea is that it does not make sense for templates to be a separate concept.
+The idea is that it does not make sense for templates to be a separate concept.
 
-    Both examples here are full blown components.
+Both examples here are full blown components.
 
-    I'm not going to get in to the "why" of this change here, 
-    but this is the first feature that I know of in Ember's design 
-    where all the research, reasoning, and exploration is out in the open -- it's a good read.
+I'm not going to get in to the "why" of this change here, 
+but this is the first feature that I know of in Ember's design 
+where all the research, reasoning, and exploration is out in the open -- it's a good read.
 -->
 
 ---
@@ -172,6 +172,18 @@ But I have written a tutorial using these concepts over at
 <img src="/pages/intro/tutorial.png" alt="QRCode to the Glimmer tutorial I made" class="qr" />
 </div>
 
+<!-- 
+
+All of this is my opinion -- 
+
+!! click 
+
+but I'm comitted to these opinions, 
+and genuinely believe they make not only our ecosystem stronger and better, 
+but the concepts benefit all ecosystems outside of ember as well.
+
+-->
+
 ---
 transition: fade
 layout: center
@@ -186,6 +198,8 @@ layout: center
 
 <!-- 
 There are no RFCs for any of what you're about to see -- as far as becoming part of the official blueprint is concerned.
+
+!! click
 
 However, I do plan on helping bring these concepts to the default experience.
 
@@ -205,18 +219,25 @@ layout: center
 </div>
 
 <!-- 
-    It's extremely important that there are easy migration paths within the community.
+It's extremely important that there are easy migration paths within the community.
 
-    Programming is hard, and some migration paths are not (and have not been) so easy.
+!!click 
 
-    I do believe that libraries I've made have direct code-moddable transition paths
-    to other, more official libraries -- such as Starbeam.
-    
-    At the moment, I haven't written any codemods, 
-    becaues there is nothing certain to transition to quite yet.
+Programming is hard, and some migration paths are not (and have not been) so easy.
 
-    Any behavioral difference between my libraries 
-    and the "stuff to be migrated to" is considered a bug.
+I do believe that libraries I've made have direct code-moddable transition paths
+to other, more official libraries -- such as Starbeam.
+
+At the moment, I haven't written any codemods, 
+becaues there is nothing certain to transition to quite yet.
+
+Any behavioral difference between my libraries 
+and the "stuff to be migrated to" is considered a bug.
+
+
+--
+
+Anywho, getting back to it...
 -->
 
 
