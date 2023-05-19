@@ -80,6 +80,16 @@ code {
   display: none;
 }
 
+.slidev-layout .absolute .absolute.left-0.bottom-0.flex.flex-row.items-end.gap-4 {
+  display: none;
+}
+
+
+.fast-fact-enter-active,
+.fast-fact-leave-active {
+  transition: opacity 0.25s ease;
+}
+
 /**
  * Disclaimers, mostly
  */

@@ -109,6 +109,9 @@ const value = cell(1);
 
 [^starbeam]: https://www.starbeamjs.com/guides/fundamentals/cells.html
 
+
+---
+transition: fast-fact
 ---
 
 <div class="fast-fact">
