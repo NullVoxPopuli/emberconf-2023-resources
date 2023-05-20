@@ -12,11 +12,11 @@ preload: false
 
 <h1 
    v-motion
-  :initial="{ y: 75 }"
+  :initial="{ y: 150 }"
   :enter="{ 
-    y: -100,
+    y: 0,
     transition: {
-      delay: 500,
+      delay: 1500,
     },
   }"
 >What are the reactive primitives in Ember?</h1>
@@ -29,14 +29,18 @@ preload: false
     <li v-click>Resources</li>
 </ul>
 
-<!-- 
+<!--
+What are the reactive primitives?
+
+(wait ~1s)
+
 (Click through each one)
 
 - Values (or cells)
 - Functions
 - Modifiers
 - Elements
-... and 
+... and
 - Resources
 
 Ok, so what do I mean by these being primitives?
@@ -50,12 +54,12 @@ layout: center
 
 # Components are not primitives.
 
-<!-- 
+<!--
 
 Components are not primitives.
 
 They wrappers of the primitives.
-Components wrap one or more 
+Components wrap one or more
 values, functions, modifiers, elements, and resources
 and components cannot alone, without these primitives.
 
@@ -66,16 +70,15 @@ However each of the primitives can be used and defined in isolation.
 layout: two-cols
 ---
 
-# Values 
+# Values
 
 <small class="related-note">_(aka cells [^starbeam])_</small>
 
-
 ::left::
 
-<div class="code-polaris">
+<div>
 
-```js {all|5,8} 
+```js {all|5,8}
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 
@@ -90,10 +93,9 @@ class Demo extends Component {
 
 </div>
 
-
 ::right::
 
-<div v-click="2" class="code-polaris">
+<div v-click="2">
 
 ```js {all|all|3,6}
 import { cell } from 'ember-resources';
@@ -109,6 +111,19 @@ const value = cell(1);
 
 [^starbeam]: https://www.starbeamjs.com/guides/fundamentals/cells.html
 
+<!-- 
+Values are identifiable (!!click) via `@tracked` property,
+
+!!click
+
+values can also be used in class-less components. 
+(!!click)
+
+((( REVIEW DAY OF -- how much have folks heard about starbeam? )))
+
+Here, a cell is a reactive value, like in starbeam.
+
+-->
 
 ---
 transition: fast-fact
@@ -133,29 +148,29 @@ function tracked(target, key, descriptor) { /* "legacy decorator" (stage 1) */
 		return reactiveValue;
 	}
 	return {
-		get() { 
-		  return getCell(this).current; 
+		get() {
+		  return getCell(this).current;
 		},
-		set(value) { 
-		  getCell(this).set(value); 
+		set(value) {
+		  getCell(this).set(value);
 		}
 	}
 }
 ```
 
-<!-- 
+<!--
 
 The `@tracked` decorator could be thought of as a small wrapper
 around reactive values.
 
-!! click 
+!! click
 
 The decorator only needs to provide native getter/setter functionality
 around the "reactive API".
 
 --
 
-This is not the real implementation, 
+This is not the real implementation,
 but I think it could be -- or very close to this, conceptually.
 
 -->
@@ -164,12 +179,11 @@ but I think it could be -- or very close to this, conceptually.
 layout: two-cols
 ---
 
-
 # Functions
 
 ::left::
 
-```js 
+```js
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 
@@ -184,12 +198,9 @@ class Demo extends Component {
 }
 ```
 
-
 ::right::
 
-
-
-```js 
+```js
 import { cell } from 'ember-resources';
 
 const data = cell({ greeting: 'Hello World!' });
@@ -201,18 +212,17 @@ const data = cell({ greeting: 'Hello World!' });
 
 <!--
 
-	In both of these examples, 
+	In both of these examples,
 	JSON.stringify is a function that many of us are familiar with.
-	Because functions are 
+	Because functions are
 
 -->
 
-
 ---
 
-# Elements 
+# Elements
 
-```js 
+```js
 <template>
   <button>Click</button>
 </template>
@@ -220,22 +230,20 @@ const data = cell({ greeting: 'Hello World!' });
 
 ---
 
-# Modifiers 
+# Modifiers
 
-```js 
+```js
 <template>
-	
+
 </template>
 ```
 
-
 ---
 
-# These are the _Reactive Primitives_ 
+# These are the _Reactive Primitives_
 
-- Values 
-- Functions 
+- Values
+- Functions
 - Resources
 - Modifiers
 - Elements
-
