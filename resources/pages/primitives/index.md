@@ -183,7 +183,7 @@ layout: two-cols
 
 ::left::
 
-```js
+```js {all|9}
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 
@@ -200,21 +200,25 @@ class Demo extends Component {
 
 ::right::
 
-```js
+```js {all|6}
 import { cell } from 'ember-resources';
 
 const data = cell({ greeting: 'Hello World!' });
 
 <template>
-	{{ (JSON.stringify data null 4) }}
+	{{ (JSON.stringify data.current null 4) }}
 </template>
 ```
 
 <!--
 
-	In both of these examples,
-	JSON.stringify is a function that many of us are familiar with.
-	Because functions are
+In both of these examples, 
+
+[[ click twice (to highlight the function lines) ]]
+
+JSON.stringify is a function that many of us are familiar with.
+Since Ember 4.5 (released a little more than 12 months ago) plain functions are natively supported.
+A lot more options open up to uss and we are less constrained to the framework.
 
 -->
 
@@ -224,19 +228,57 @@ const data = cell({ greeting: 'Hello World!' });
 
 ```js
 <template>
-  <button>Click</button>
+	<style>
+		.loading { /* ... */ }
+		@media (prefers-reduced-motion) { /* ... */ }
+	</sytle>
+
+	<button 
+		class="loading" 
+		aria-busy="true" 
+		aria-label="Do the thing"
+	>
+	  Loading...
+	</button>
 </template>
 ```
+
+<!-- 
+I consider elements a primitive, because Ember supports *all* HTML 
+
+!! click 
+
+...its elements...
+...and its properties
+
+Which I think is important because it means we can refer to The MDN Docs.
+-->
 
 ---
 
 # Modifiers
 
-```js
-<template>
+```gjs
+import { on } from '@ember/modifier';
+import { cell } from 'ember-resources';
 
+const active = cell(false);
+
+<template>
+	<button {{on 'click' active.toggle}}>
+		{{#if active.current}}
+			Ugh, fine, you can click Me
+		{{else}}
+			Please don't click me 
+		{{/if}}
+	</button>
 </template>
 ```
+
+<!--
+  Modifiers are not only a primitive in ember, I think they are a key 
+  *missing* primitive in other frameworks.
+-->
 
 ---
 
