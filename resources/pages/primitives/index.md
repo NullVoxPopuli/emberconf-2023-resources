@@ -258,7 +258,7 @@ Which I think is important because it means we can refer to The MDN Docs.
 
 # Modifiers
 
-```gjs
+```js
 import { on } from '@ember/modifier';
 import { cell } from 'ember-resources';
 
@@ -281,11 +281,31 @@ const active = cell(false);
 -->
 
 ---
+layout: cover
+---
+
+<style>
+  li { font-size: 2rem; }
+</style>
 
 # These are the _Reactive Primitives_
 
 - Values
 - Functions
-- Resources
-- Modifiers
 - Elements
+- Modifiers
+
+<div v-click>
+
+- Resources
+
+</div>
+
+<!-- 
+In Summary, these are the primitives.
+
+!!click 
+
+and then Resources are what we'll cover going forward!
+Let's get in to it.
+-->
