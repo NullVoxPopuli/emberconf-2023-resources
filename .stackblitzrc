@@ -1,0 +1,3 @@
+{
+   "startCommand": "cd resources; npm i; npm run dev;"
+}
