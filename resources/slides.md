@@ -95,7 +95,7 @@ layout: end
 ---
 # Thank You 
 
-Find me `@NullVoxPopuli`
+Find me [`@NullVoxPopuli`](https://linktr.ee/nullvoxpopuli)
 
 <!-- 
 
