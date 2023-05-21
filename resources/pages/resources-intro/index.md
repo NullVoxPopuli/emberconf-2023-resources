@@ -1,14 +1,5 @@
 
 ---
-src ./what-problems.md
----
-
----
-src ./octane-patterns-are-not-enough.md
----
-
-
----
 transition: fade-out
 ---
 

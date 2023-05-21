@@ -284,22 +284,17 @@ const active = cell(false);
 layout: cover
 ---
 
-<style>
-  li { font-size: 2rem; }
-</style>
-
 # These are the _Reactive Primitives_
 
-- Values
-- Functions
-- Elements
-- Modifiers
+<ul class="big-list">
+  <li>Values</li>
+	<li>Functions</li>
+	<li>Elements</li>
+	<li>Modifiers</li>
+	<li v-click>Resources</li>
+</ul>
 
-<div v-click>
 
-- Resources
-
-</div>
 
 <!-- 
 In Summary, these are the primitives.

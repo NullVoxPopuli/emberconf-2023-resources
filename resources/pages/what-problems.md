@@ -1,5 +1,6 @@
 ---
 transition: fade-out
+layout: full
 ---
 
 # Octane
@@ -18,6 +19,7 @@ we, as employees of various companies pressed on best we could.
 
 ---
 transition: fade-out
+layout: full
 ---
 
 # Octane has problems
@@ -34,6 +36,7 @@ but left us frustrated in many others.
 
 ---
 transition: fade-out
+layout: full
 ---
 
 # Octane can be Awkward
