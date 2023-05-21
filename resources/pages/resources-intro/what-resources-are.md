@@ -1,4 +1,3 @@
-
 ---
 transition: fade-out
 ---
