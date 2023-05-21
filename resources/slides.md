@@ -89,13 +89,14 @@ src: ./pages/primitives/index.md
 ---
 src ./pages/resources-intro/what-problems.md
 ---
+
 ---
 src ./pages/resources-intro/octane-patterns-are-not-enough.md
 ---
+
 ---
 src ./pages/resources-intro/index.md
 ---
-
 
 
 ---
