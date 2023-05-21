@@ -1,5 +1,7 @@
 ---
 layout: end
+transition: fade 
+preload: false 
 ---
 
 # Thank You 
@@ -16,7 +18,4 @@ and as always, you can ask me anything @NullVoxPopuli
 
 -->
 
----
-layout: end
----
 

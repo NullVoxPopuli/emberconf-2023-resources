@@ -1,5 +1,5 @@
 ---
-layout: full
+layout: center
 ---
 
 # Octane
@@ -16,7 +16,7 @@ we, as employees of various companies pressed on best we could.
 -->
 
 ---
-layout: full
+layout: center
 ---
 
 # Octane has problems
@@ -32,7 +32,7 @@ but left us frustrated in many others.
 -->
 
 ---
-layout: full
+layout: center
 ---
 
 # Octane can be Awkward
@@ -53,3 +53,4 @@ aspects of programming Web Apps in the new programming paradigm, especially give
 the release of Octane and development slowed down quite a bit.
 
  -->
+

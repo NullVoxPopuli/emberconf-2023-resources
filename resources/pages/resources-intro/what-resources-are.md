@@ -1,6 +1,4 @@
 ---
-transition: fade-out
----
 
 # What's a Resource?
 
@@ -17,8 +15,7 @@ a hook
 <!-- -->
 
 ---
-transition: fade-out
----
+
 
 # A Resource is like...
 
@@ -27,8 +24,7 @@ a cached getter
 <!-- -->
 
 ---
-transition: fade-out
----
+
 
 # A Resource is like...
 
@@ -38,8 +34,7 @@ a memoized cached getter hack
 
 
 ---
-transition: fade-out
----
+
 
 # tl;dr: 
 
@@ -75,8 +70,7 @@ transition: fade-out
 <!-- -->
 
 ---
-transition: fade-out
----
+
 
 # These look familiar?
 
