@@ -5,6 +5,8 @@ layout: center
 # Octane
 
 <!-- 
+But first, some more context / history:
+
 Back in Late 2019, Ember Octane was released.
 
 It was a great time to prove to the community that *that community* could come together and lift up all our old projects in to the future with modern syntax, more modern tooling, and more importantly give us hope.
@@ -37,20 +39,24 @@ layout: center
 
 # Octane can be Awkward
 
-<h2 v-click>Awkane</h2>
+<h2 v-click>Octward?</h2>
 
 
 <!--
 Pre-octane, we had many many years to develop solutions to various problems 
-in "the old way" -- the old way, provide confusing and counter-productive for onboarding new folks,
-so I'm very glad its gone. But we were left to find solutions to our problems ourselves.
+in "the old way" -- the old way, proved itself very confusing and counter-productive for onboarding new folks,
+so I'm very glad its gone. But we were still left to find solutions to our problems ourselves.
+
+!! click
 
 This is, in part, where Polaris comes in, aggregating all our investigation, research, and exploration 
 over the past several years, and providing a cohesive story around all the new concepts.
 
-I don't tihnk it would have been a good idea to delay Octane until we had figured out how to solve all the other 
-aspects of programming Web Apps in the new programming paradigm, especially given that Covid happened shortly after 
+I don't think it would have been a good idea to delay Octane until we had figured out how to solve all the other 
+aspects of programming Web Apps in the new programming paradigm... especially given that Covid happened shortly after 
 the release of Octane and development slowed down quite a bit.
 
+I'm not going to go in to *all* the ways Octane is awkward, 
+but I am going to cover the situations that relate to Resources.
  -->
 

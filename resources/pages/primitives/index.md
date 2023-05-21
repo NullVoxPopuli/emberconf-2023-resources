@@ -30,9 +30,10 @@ preload: false
 </ul>
 
 <!--
-What are the reactive primitives?
+But first, for some context, we need to know what the reactive primitives are.
+So.. what are they?
 
-(wait ~1s)
+(wait ~1s or until the title moves up to the top of the slide)
 
 (Click through each one)
 
@@ -302,5 +303,4 @@ In Summary, these are the primitives.
 !!click 
 
 and then Resources are what we'll cover going forward!
-Let's get in to it.
 -->
