@@ -21,9 +21,18 @@ we, as employees of various companies pressed on best we could.
 layout: center
 ---
 
-# Octane has problems
+# Octane was incomplete
 
 <!-- 
+
+Polaris is *finishing octane*
+Octane was getting off classic
+
+merge with the next slide, don't give folks the sense that they have another migration to do
+better stories are being developed 
+no breaking changes 
+--
+
 While we were all exploing Octane, getting used to it, 
 or coming up with a 2 (or more) year plan to finally catch up on maintenance,
 we found that Octane did not solve everything we needed it to.

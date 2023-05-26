@@ -12,6 +12,12 @@ transition: fade-out
 
 a hook
 
+- setInterval 
+- resizeObserver = modifier = element () => resource 
+- WebSocket - connected status
+- FireBase
+- find MDN apis that have cleanup, disconnect
+
 <!-- -->
 
 ---
@@ -19,7 +25,25 @@ a hook
 
 # A Resource is like...
 
+
 a cached getter
+
+
+not a resource:
+```js 
+@cached 
+get foo() {
+    let instance = new Foo();
+
+    // no cleanup!
+    // no link!
+    return instance;
+}
+```
+
+autotracked instantation
+autotracking frame somewhere
+resource = any reactive object that you want to instantiate
 
 <!-- -->
 
@@ -29,6 +53,21 @@ a cached getter
 # A Resource is like...
 
 a memoized cached getter hack
+
+```js 
+get foo() {
+  if (this._foo) return this._foo;
+
+    this._foo = new Foo();
+
+    // problems: 
+    //   no update!
+    //   no cleanup!
+    //   no link!
+    return this._foo;
+}
+```
+
 
 <!-- -->
 
@@ -45,8 +84,9 @@ a memoized cached getter hack
     }
 </style>
 
-- derived data is the secret to performance 
+- derived data is the secret to performance and clarity
 - resources help you model any situation as derived data.
+- more points 
 - to get started:
 
     ```bash 
@@ -67,7 +107,12 @@ a memoized cached getter hack
   </a>
 </div>
 
-<!-- -->
+<!--
+"much the same way that promises are better than callbacks"
+
+"resources are not effects"
+someone has to request data 
+ -->
 
 ---
 
@@ -77,15 +122,45 @@ a memoized cached getter hack
 When squinting, they kinda look like effects, yet are derived data, and effects cause performance issues by rendering more times than needed.
 Also, like hooks, in that they can be composed, and represent a value.
 
-    ```js 
-    const CurrentTime = resource(() => { /* ... */ });
+```js 
+const CurrentTime = resource(() => { /* ... */ });
 
-    export const FormattedTime = resource(({ use }) => {
-        return use(CurrentTime);
-    });
-    ```
+export const FormattedTime = resource(({ use }) => {
+    return use(CurrentTime);
+});
+```
 
 <!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
+
 -->
+
+--- 
+
+# Resources used as Modifiers 
+
+---
+
+# Resources used as Services 
+
+```js 
+import { service } from 'ember-resources/service';
+
+// ...
+```
+
+---
+
+_focus on story as a continuous set of improvements_
+
+resources are focused on data
+resources unify a bunch of concepts 
+- cleanup 
+- lifetime 
+- data 
+there is data, and there are lifetimes 
+
+rationalization and simplification of all these things
+
+helper: lifetime of block 
+modifiers: lifetime of element 
+services: lifetime of app 

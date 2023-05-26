@@ -4,6 +4,7 @@ fonts:
   sans: Comfortaa
 background: /pages/paul-wong-uKWdq9TcaiI-unsplash.jpg
 class: text-center
+# TODO: copy vscode gjs highlighter for shiki, it understands vscode highlighting
 highlighter: shiki
 lineNumbers: false
 info: >
@@ -45,6 +46,9 @@ Ember Octane is missing primitives, and resources are one such primitive that ma
 Tools used for making this presentation
 - https://sli.dev/
 - https://www.the-qrcode-generator.com/
+
+Things to cover:
+- Resources as "Services" (long lifetime)
 
 -->
 

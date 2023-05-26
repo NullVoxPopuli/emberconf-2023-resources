@@ -20,13 +20,20 @@ preload: false
     },
   }"
 >What are the reactive primitives in Ember?</h1>
+ 
+ TODO: animate this
 
 <ul class="display-list">
     <li v-click>Values</li>
     <li v-click>Functions</li>
-    <li v-click>Modifiers</li>
+	 <li v-click>Modifiers*</li>
     <li v-click>Elements</li>
-    <li v-click>Resources</li>
+    <li v-click>
+	   Resources
+			<ul>
+	       <li v-click>Modifiers*</li>
+		  </ul>
+	 </li>
 </ul>
 
 <!--
@@ -59,6 +66,16 @@ layout: center
 
 Components are not primitives.
 
+-
+-Components used to be primitives when they were associated with a wrapping div.
+ - Components abstracted an element 
+   - modifiers do this now -- lifecycle, required element 
+	- + ...attributes 
+
+-Components are tool for refactoring
+ - a place for tracked state to live or be injected in to 
+
+
 They wrappers of the primitives.
 Components wrap one or more
 values, functions, modifiers, elements, and resources
@@ -89,6 +106,46 @@ class Demo extends Component {
 	<template>
 		{{this.value}}
 	</template>
+}
+```
+
+```js 
+import Component from '@glimmer/component';
+import { cell } from 'ember-resources';
+
+class Demo extends Component {
+	#value = cell(1);
+	get value() {
+		return this.#value.current;
+	}
+	set value(value) {
+      this.#value.current = value;
+	}
+	<template>
+		{{this.value}}
+	</template>
+}
+```
+
+```js
+// "component" state
+<template>
+  {{#let (createState 1) as |s|}}
+    {{s.value}}
+	 access args, use attributes, etc 
+
+  {{/let}}
+</template>
+
+class Demo {
+	@tracked value;
+	constructor(initial) { this.value = initial; }
+}
+
+// TODO: later, show how resources can also "be components"?
+// NOTE: mention that @tracked has nothing to do with a component 
+function createState(initialValue) {
+	return new Demo(initialValue);
 }
 ```
 
@@ -137,6 +194,9 @@ transition: fast-fact
 </div>
 
 ## _`@tracked` can be thought of as a light wrapper around reactive values_
+
+TODO: show the pre-decorator version (getter setter in class)
+  benefit: not everyone understands decorators
 
 ```js {all|11-16}
 function tracked(target, key, descriptor) { /* "legacy decorator" (stage 1) */
