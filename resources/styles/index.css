@@ -84,6 +84,10 @@ code {
   display: none;
 }
 
+.big-list li {
+  font-size: 2rem;
+}
+
 
 .fast-fact-enter-active,
 .fast-fact-leave-active {

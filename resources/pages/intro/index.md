@@ -84,7 +84,7 @@ layout: center
 
 <div class="related-note">Introduction</div>
 
-# My <span v-click>programming</span> journey so far
+# My programming journey so far
 
 - 2002+: CSS / HTML / Geocities
 - 2003+: MySpace Customizations 🙃
