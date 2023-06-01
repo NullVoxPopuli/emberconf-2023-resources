@@ -38,6 +38,16 @@ This talk will briefly cover
 - Additionally, since resources are a non-core library, 
   it'll be important to mention how easily code-moddable the existing resources are to other implementations, such as from Starbeam.
 
+Notes to hit:
+- but Resources give you a nice easy to share thing with your team where they don't need to worry about any of the behavioral or implementation details
+
+- when talking about Octane, be sure to mention how easy it is to integrate with vanilla JS -- one of the easiest frameworks do integrate with vanilla JS
+
+
+TODO:
+- watch some talks, specifically Solid (also components are not primitives)
+- See if Yehuda's latest talk is out, or reference slides
+
 
 Pitch
 

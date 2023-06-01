@@ -8,6 +8,15 @@ preload: false
     .display-list li {
         font-size: 2rem;
     }
+    .skew-a-bit {
+        transform: skew(13deg, 2deg);
+    }
+    .modifier-eventual-crossout {
+      position: relative;
+    }
+    .modifier-eventual-crossout span {
+       position: absolute; 
+    }
 </style>
 
 <h1 
@@ -21,18 +30,22 @@ preload: false
   }"
 >What are the reactive primitives in Ember?</h1>
  
- TODO: animate this
-
 <ul class="display-list">
-    <li v-click>Values</li>
-    <li v-click>Functions</li>
-	 <li v-click>Modifiers*</li>
-    <li v-click>Elements</li>
-    <li v-click>
+    <li v-click="1">Values</li>
+    <li v-click="2">Functions</li>
+	<li v-click="3" class="modifier-eventual-crossout">
+        <span v-click="6"><del>Modifiers</del></span>
+        <span v-click="3" v-click-hide="6">Modifiers</span>
+    </li>
+    <li v-click="4">Elements</li>
+    <li v-click="5">
 	   Resources
-			<ul>
-	       <li v-click>Modifiers*</li>
-		  </ul>
+		<ul>
+	      <li v-click="7">Modifiers</li>
+	      <li v-click="8" class="skew-a-bit">
+            Services
+          </li>
+		</ul>
 	 </li>
 </ul>
 
@@ -50,6 +63,10 @@ So.. what are they?
 - Elements
 ... and
 - Resources
+
+(click), modifiers is crossed out
+(click), modifiers shows up under resources
+(click), oh services appeared!
 
 Ok, so what do I mean by these being primitives?
 
@@ -92,11 +109,13 @@ layout: two-cols
 
 <small class="related-note">_(aka cells [^starbeam])_</small>
 
+[^starbeam]: https://www.starbeamjs.com/guides/fundamentals/cells.html
+
 ::left::
 
 <div>
 
-```js {all|5,8}
+```js 
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 
@@ -109,7 +128,13 @@ class Demo extends Component {
 }
 ```
 
-```js 
+</div>
+
+::right::
+
+<div v-click>
+
+```js
 import Component from '@glimmer/component';
 import { cell } from 'ember-resources';
 
@@ -121,11 +146,81 @@ class Demo extends Component {
 	set value(value) {
       this.#value.current = value;
 	}
+
 	<template>
 		{{this.value}}
 	</template>
 }
 ```
+
+</div>
+
+---
+transition: fast-fact
+---
+
+<div class="fast-fact">
+
+# <fa-angle-double-right /> Fast Fact! <fa-angle-double-right />
+
+</div>
+
+## _`@tracked` can be thought of as a light wrapper around reactive values_
+
+```js {all|11-16}
+function tracked(target, key, descriptor) { /* "legacy decorator" (stage 1) */
+	let cache = new WeakMap();
+	let getCell = (ctx) => {
+		let reactiveValue = cache.get(ctx);
+		if (!reactiveValue) {
+			cache.set(ctx, reactiveValue = cell(descriptor.initializer?.()));
+		}
+		return reactiveValue;
+	}
+	return {
+		get() {
+		  return getCell(this).current;
+		},
+		set(value) {
+		  getCell(this).set(value);
+		}
+	}
+}
+```
+
+<!--
+
+[[ **In a de-emphacized tone**  this isn't important to the talk, but could be fun ]]
+
+The `@tracked` decorator could be thought of as a small wrapper
+around reactive values.
+
+!! click
+
+The decorator only needs to provide native getter/setter functionality
+around the "reactive API".
+
+--
+
+This is not the real implementation,
+but I think it could be -- or very close to this, conceptually.
+
+-->
+
+
+---
+layout: two-cols
+---
+
+# Values 
+
+<small class="related-note">_(aka cells [^starbeam])_</small>
+
+[^starbeam]: https://www.starbeamjs.com/guides/fundamentals/cells.html
+
+::left::
+
+<div>
 
 ```js
 // "component" state
@@ -180,59 +275,6 @@ values can also be used in class-less components.
 ((( REVIEW DAY OF -- how much have folks heard about starbeam? )))
 
 Here, a cell is a reactive value, like in starbeam.
-
--->
-
----
-transition: fast-fact
----
-
-<div class="fast-fact">
-
-# <fa-angle-double-right /> Fast Fact! <fa-angle-double-right />
-
-</div>
-
-## _`@tracked` can be thought of as a light wrapper around reactive values_
-
-TODO: show the pre-decorator version (getter setter in class)
-  benefit: not everyone understands decorators
-
-```js {all|11-16}
-function tracked(target, key, descriptor) { /* "legacy decorator" (stage 1) */
-	let cache = new WeakMap();
-	let getCell = (ctx) => {
-		let reactiveValue = cache.get(ctx);
-		if (!reactiveValue) {
-			cache.set(ctx, reactiveValue = cell(descriptor.initializer?.()));
-		}
-		return reactiveValue;
-	}
-	return {
-		get() {
-		  return getCell(this).current;
-		},
-		set(value) {
-		  getCell(this).set(value);
-		}
-	}
-}
-```
-
-<!--
-
-The `@tracked` decorator could be thought of as a small wrapper
-around reactive values.
-
-!! click
-
-The decorator only needs to provide native getter/setter functionality
-around the "reactive API".
-
---
-
-This is not the real implementation,
-but I think it could be -- or very close to this, conceptually.
 
 -->
 
