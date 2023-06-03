@@ -23,6 +23,8 @@ layout: center
 
 # Octane was incomplete
 
+<h2 v-click>Polaris finishes it</h2>
+
 <!-- 
 
 Polaris is *finishing octane*

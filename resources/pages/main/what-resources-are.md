@@ -1,12 +1,42 @@
 ---
+layout: center
+---
 
 # What's a Resource?
 
-<!-- -->
+<blockquote v-click>
+<h2>
+
+A resource is a reactive function with cleanup logic.[^starbeam-resource-docs]
+
+</h2>
+</blockquote>
+
+
+[^starbeam-resource-docs]: https://www.starbeamjs.com/guides/fundamentals/resources.html
+
+
+<!-- 
+
+What is a resource?
+
+It is a reactive function, which represents a value, and has cleanup.
+
+
+...
+
+ok great, but why does that matter?
+let's look at a number of examples
+
+-->
 
 ---
-transition: fade-out
+src: "./examples/interval.md"
 ---
+
+
+---
+
 
 # A Resource is like...
 
