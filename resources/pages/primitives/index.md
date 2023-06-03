@@ -132,9 +132,9 @@ class Demo extends Component {
 
 ::right::
 
-<div v-click>
+<div v-click="2">
 
-```js {all|5-10}
+```js {all|all|5-10}
 import Component from '@glimmer/component';
 import { cell } from 'ember-resources';
 
@@ -164,17 +164,20 @@ Here, we have a tracked value.
 
 Which, if we expand --
 
-!!click
-!!click
 
 or peek behind the curtain of 
-
-
-
 -- the decorator, 
+
+!!click
+
 we get the implementation on the right.
 
+!!click
 
+a getter and a setter with the real value hidden
+
+
+(you may need to click twice to get to the next slide for some reason)
 -->
 
 ---
@@ -267,7 +270,7 @@ function createState(initialValue) {
 
 ::right::
 
-<div v-click="2">
+<div v-click>
 
 ```js 
 // "component" state
@@ -288,11 +291,8 @@ function createState(initialValue) {
   }
 }
 ```
-
-
 </div>
 
-[^starbeam]: https://www.starbeamjs.com/guides/fundamentals/cells.html
 
 <!-- 
 
@@ -305,6 +305,14 @@ For example, the `@tracked` decorator doesn't need to be used in components.
 ---
 layout: two-cols
 ---
+
+# Values 
+
+<small class="related-note">_(aka cells [^starbeam])_</small>
+
+[^starbeam]: https://www.starbeamjs.com/guides/fundamentals/cells.html
+
+::left:: 
 
 ```js 
 import { cell } from 'ember-resources';

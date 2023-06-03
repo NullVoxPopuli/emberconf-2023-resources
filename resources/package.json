@@ -7,8 +7,9 @@
     "export": "slidev export"
   },
   "dependencies": {
-    "@carbon/icons": "^11.19.0",
-    "@slidev/cli": "^0.41.1",
+    "vscode-glimmer": "github:chiragpat/vscode-glimmer",
+    "@carbon/icons": "^11.20.0",
+    "@slidev/cli": "^0.42.3",
     "@slidev/theme-default": "*",
     "@slidev/theme-seriph": "*",
     "slidev-theme-academic": "^1.1.3",
