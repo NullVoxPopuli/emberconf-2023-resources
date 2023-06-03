@@ -83,22 +83,22 @@ layout: center
 
 Components are not primitives.
 
--
--Components used to be primitives when they were associated with a wrapping div.
- - Components abstracted an element 
-   - modifiers do this now -- lifecycle, required element 
-	- + ...attributes 
+Components used to be primitives way back when they were associated with a wrapping div.
+- Components abstracted an element 
+- modifiers do this now -- the lifecycle, the required element 
+- ...attributes 
 
--Components are tool for refactoring
- - a place for tracked state to live or be injected in to 
-
+Components are a tool for refactoring
+- a place for tracked state to live or be injected in to 
+- there are also other tools for refactoring which can serve similar purposes
+  and sometimes more focused purposes
 
 They wrappers of the primitives.
-Components wrap one or more
-values, functions, modifiers, elements, and resources
-and components cannot alone, without these primitives.
+- Components wrap one or more
+  values, functions, modifiers, elements, and resources
+  and components cannot alone, without these primitives.
 
-However each of the primitives can be used and defined in isolation.
+The main thing is that each of the primitives can be used and defined in isolation.
 -->
 
 ---
@@ -115,7 +115,7 @@ layout: two-cols
 
 <div>
 
-```js 
+```js {all|5} 
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 
@@ -134,7 +134,7 @@ class Demo extends Component {
 
 <div v-click>
 
-```js
+```js {all|5-10}
 import Component from '@glimmer/component';
 import { cell } from 'ember-resources';
 
@@ -154,6 +154,28 @@ class Demo extends Component {
 ```
 
 </div>
+
+<!-- 
+
+First, we have values.
+Here, we have a tracked value.
+
+!!click 
+
+Which, if we expand --
+
+!!click
+!!click
+
+or peek behind the curtain of 
+
+
+
+-- the decorator, 
+we get the implementation on the right.
+
+
+-->
 
 ---
 transition: fast-fact
@@ -187,8 +209,11 @@ function tracked(target, key, descriptor) { /* "legacy decorator" (stage 1) */
 	}
 }
 ```
+<div class="disclaimer-footnote">*not real implementation, approximation</div>
 
 <!--
+
+TODO: do I just want to get rid of this slide? decorator implementation isn't important
 
 [[ **In a de-emphacized tone**  this isn't important to the talk, but could be fun ]]
 
@@ -198,12 +223,7 @@ around reactive values.
 !! click
 
 The decorator only needs to provide native getter/setter functionality
-around the "reactive API".
-
---
-
-This is not the real implementation,
-but I think it could be -- or very close to this, conceptually.
+around the "reactive API", similar to what we saw on the right-hand side of the last slide.
 
 -->
 
@@ -233,12 +253,11 @@ layout: two-cols
 </template>
 
 class Demo {
-	@tracked value;
-	constructor(initial) { this.value = initial; }
+  @tracked value;
+  constructor(initial) { this.value = initial; }
+  double = () => this.value *= 2;
 }
 
-// TODO: later, show how resources can also "be components"?
-// NOTE: mention that @tracked has nothing to do with a component 
 function createState(initialValue) {
 	return new Demo(initialValue);
 }
@@ -250,33 +269,66 @@ function createState(initialValue) {
 
 <div v-click="2">
 
-```js {all|all|3,6}
-import { cell } from 'ember-resources';
-
-const value = cell(1);
-
+```js 
+// "component" state
 <template>
-	{{cell.current}}
+  {{#let (createState 1) as |s|}}
+    {{s.value}}
+	 access args, use attributes, etc 
+
+  {{/let}}
 </template>
+
+function createState(initialValue) {
+  let value = cell(initialValue);
+
+  return {
+    get value() { return value.current; }
+    double: () => value.current *= 2; 
+  }
+}
 ```
+
 
 </div>
 
 [^starbeam]: https://www.starbeamjs.com/guides/fundamentals/cells.html
 
 <!-- 
-Values are identifiable (!!click) via `@tracked` property,
 
-!!click
+Coming back to values, they are primitives, because we can use them anywhere
 
-values can also be used in class-less components. 
-(!!click)
-
-((( REVIEW DAY OF -- how much have folks heard about starbeam? )))
-
-Here, a cell is a reactive value, like in starbeam.
+For example, the `@tracked` decorator doesn't need to be used in components.
 
 -->
+
+---
+layout: two-cols
+---
+
+```js 
+import { cell } from 'ember-resources';
+
+const value = cell(1);
+
+<template>
+  {{cell.current}}
+</template>
+```
+
+<!-- 
+
+Last point about values for now,
+
+You don't even need a container to use them.
+(whether that's a class, component, function, etc)
+
+Though,
+While you could use module state, and module state works great for demos,
+it doesn't scale with an app.
+
+-->
+
 
 ---
 layout: two-cols

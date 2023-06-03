@@ -47,6 +47,7 @@ Notes to hit:
 TODO:
 - watch some talks, specifically Solid (also components are not primitives)
 - See if Yehuda's latest talk is out, or reference slides
+- show how resources can be components
 
 
 Pitch
