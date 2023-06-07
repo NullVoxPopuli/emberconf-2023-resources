@@ -28,6 +28,13 @@ canvas.qr-code {
   animation: textclip 2s linear infinite;
 }
 
+blockquote.big {
+  font-size: 2rem;
+}
+blockquote.big > p {
+  line-height: 2.5rem;
+}
+
 @keyframes textclip {
   to {
     background-position: 200% center;

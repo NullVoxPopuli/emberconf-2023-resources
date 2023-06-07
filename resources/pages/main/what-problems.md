@@ -21,7 +21,7 @@ we, as employees of various companies pressed on best we could.
 layout: center
 ---
 
-# Octane was incomplete
+# Octane was focused on syntax.
 
 <h2 v-click>Polaris finishes it</h2>
 

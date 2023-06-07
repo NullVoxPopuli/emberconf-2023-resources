@@ -4,7 +4,7 @@ layout: center
 
 # What's a Resource?
 
-<blockquote v-click>
+<blockquote v-click class="big">
 <h2>
 
 A resource is a reactive function with cleanup logic.[^starbeam-resource-docs]
@@ -23,12 +23,88 @@ What is a resource?
 It is a reactive function, which represents a value, and has cleanup.
 
 
-...
-
-ok great, but why does that matter?
-let's look at a number of examples
 
 -->
+
+---
+transition: fade
+---
+
+# ECMAScript Explicit Resource Management
+
+<blockquote class="big">
+
+This proposal intends to address a common pattern in software development **regarding the lifetime** and management of various resources (memory, I/O, etc.). This pattern generally includes the allocation of a resource and the ability to explicitly release critical resources. 
+  [^tc39-explicit-resource-management]
+
+</blockquote>
+
+[^tc39-explicit-resource-management]: https://github.com/tc39/proposal-explicit-resource-management
+
+<!-- 
+
+Resources are also a concept in javascript itself.
+Here is a snippet from a TC39 proposal readme that is in stage 3, or the implementation phase.
+
+The javascript resources have a similar purpose -- they provide 
+a means to manage the lifetime of an object.
+
+Ember and starbeam of Resources provide reactive implementations of this concept, and it makes sense for the implementations to build on top of JavaScript resources once they're shipped.
+
+
+
+-->
+
+---
+transition: fade
+layout: center
+---
+
+# Ok, but why? what's the deal?
+
+<!--
+
+...
+
+ok great, but why does any of this matter?
+-->
+
+---
+transition: fade
+layout: center
+---
+
+# Resources allow us to model anything
+
+<h1 v-click>with a lifetime</h1>
+
+<div style="text-align: right">
+<h2 v-click>Values</h2>
+<h2 v-click>Modifiers</h2>
+<h2 v-click>Services</h2>
+</div>
+
+
+<!-- 
+
+Resources 
+!! click
+allow us to concepts we are familiar with 
+greater ergonomics
+
+!! click<br>
+Values
+
+!! click<br>
+Modifiers
+
+!! click<br>
+and Services.
+
+
+Let's start with some examples of Resources as Values
+-->
+
 
 ---
 src: "./examples/interval.md"
