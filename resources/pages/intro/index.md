@@ -97,10 +97,12 @@ layout: center
 - 2019-2023: Ember.JS
 
 <!-- 
-  Not gonna read this, to ya'll, 
+This is my programming journey so far
 
-  but the tl;dr: is I've seen a lot of things, used a fair number of technologies,
-  and I've been using Ember.JS the longest so far.
+Not gonna read this, to ya'll, 
+
+but the tl;dr: is I've seen a lot of things, used a fair number of technologies,
+and I've been using Ember.JS the longest so far.
 -->
 
 
@@ -127,7 +129,7 @@ layout: center
 </div>
 
 <!-- 
-    This is a picture of my partner and favorite human.
-    
-    Outside of programming, I like video games, and swing dancing.
+This is a picture of my partner and favorite human.
+
+Outside of programming, I like video games, and swing dancing.
 -->

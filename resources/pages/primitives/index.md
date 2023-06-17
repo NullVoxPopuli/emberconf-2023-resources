@@ -50,7 +50,7 @@ preload: false
 </ul>
 
 <!--
-But first, for some context, we need to know what the reactive primitives are.
+for some context, we need to know what the reactive primitives are.
 So.. what are they?
 
 (wait ~1s or until the title moves up to the top of the slide)
@@ -64,9 +64,11 @@ So.. what are they?
 ... and
 - Resources
 
-(click), modifiers is crossed out
-(click), modifiers shows up under resources
-(click), oh services appeared!
+(click), I think modifiers need to move though
+
+(click), yeah, how about here
+
+(click), while we're at it, let's throw services under here as well
 
 Ok, so what do I mean by these being primitives?
 
@@ -86,17 +88,18 @@ Components are not primitives.
 Components used to be primitives way back when they were associated with a wrapping div.
 - Components abstracted an element 
 - modifiers do this now -- the lifecycle, the required element 
-- ...attributes 
+- ...attributes provide the rest of the functionality you'd want on an element 
 
 Components are a tool for refactoring
-- a place for tracked state to live or be injected in to 
+- they are a place for tracked state to live or be injected in to 
 - there are also other tools for refactoring which can serve similar purposes
   and sometimes more focused purposes
 
-They wrappers of the primitives.
+They are **wrappers** of the primitives.
 - Components wrap one or more
   values, functions, modifiers, elements, and resources
-  and components cannot alone, without these primitives.
+  
+- ...and components cannot, alone, exist without these primitives.
 
 The main thing is that each of the primitives can be used and defined in isolation.
 -->
@@ -249,6 +252,10 @@ Coming back to values, they are primitives, because we can use them anywhere
 
 For example, the `@tracked` decorator doesn't need to be used in components.
 
+!! click 
+
+on the right is an alternative implementation of the same behavior, using a new value primitive available in both starbeam and the ember-resources library's family of utilities.
+
 -->
 
 ---
@@ -329,8 +336,10 @@ In both of these examples,
 [[ click twice (to highlight the function lines) ]]
 
 JSON.stringify is a function that many of us are familiar with.
-Since Ember 4.5 (released a little more than 12 months ago) plain functions are natively supported.
-A lot more options open up to uss and we are less constrained to the framework.
+Plain functions are natively supported starting in Ember 4.5 (so, for about the last 12 months).
+A polyfill is available for Ember 3.25.
+
+For about the last 28 months since Ember 3.25's release, we have had a lot more options open up to us and we are less constrained to the framework.
 
 -->
 
@@ -338,7 +347,7 @@ A lot more options open up to uss and we are less constrained to the framework.
 
 # Elements
 
-```js
+```js {all|6-13}
 <template>
 	<style>
 		.loading { /* ... */ }
@@ -363,7 +372,7 @@ I consider elements a primitive, because Ember supports *all* HTML
 ...its elements...
 ...and its properties
 
-Which I think is important because it means we can refer to The MDN Docs.
+Which I think is important because it means we can refer to **The MDN Docs**.
 -->
 
 ---
@@ -388,8 +397,11 @@ const active = cell(false);
 ```
 
 <!--
-  Modifiers are not only a primitive in ember, I think they are a key 
-  *missing* primitive in other frameworks.
+Modifiers are not only a primitive in ember, I think they are a key 
+*missing* primitive in other frameworks.
+
+They allow single-pass wiring of element behavior without needing to manage
+references to that element and additionally provide cleanup behavior all bundled in a co-located fashion.
 -->
 
 ---

@@ -20,7 +20,9 @@ A resource is a reactive function with cleanup logic.[^starbeam-resource-docs]
 
 What is a resource?
 
-It is a reactive function, which represents a value, and has cleanup.
+!!click
+
+It is a reactive function -- and has cleanup.
 
 
 
@@ -49,7 +51,7 @@ Here is a snippet from a TC39 proposal readme that is in stage 3, or the impleme
 The javascript resources have a similar purpose -- they provide 
 a means to manage the lifetime of an object.
 
-Ember and starbeam of Resources provide reactive implementations of this concept, and it makes sense for the implementations to build on top of JavaScript resources once they're shipped.
+Ember and starbeam Resources provide reactive implementations of this concept, and it may make sense for the implementations to build on top of JavaScript resources once they're shipped.
 
 
 
@@ -88,18 +90,21 @@ layout: center
 <!-- 
 
 Resources 
+
 !! click
-allow us to concepts we are familiar with 
+
+allow us to implement concepts that we are familiar with, but with
 greater ergonomics
 
 !! click<br>
-Values
+Values - these *could* have cleanup.
 
 !! click<br>
-Modifiers
+Modifiers - often have cleanup.
 
 !! click<br>
-and Services.
+and Services - always have cleanup.
+
 
 
 Let's start with some examples of Resources as Values

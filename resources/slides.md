@@ -84,7 +84,17 @@ Resources on Resources: the missing primitive.
 
 <!--
 
-Hello! We're going to have a look at Resources, which I believe are one of the core reactive primitives we've been missing. But first a quick introduction of myself 
+Hello! 
+
+This is Resources squared, or otherwise 
+
+(hopefully) 
+
+resources on resources, what I believe to be a core primitive when it comes to reactivity.
+
+(not just for Ember)
+
+But first a quick introduction of myself 
 
 -->
 

@@ -7,10 +7,13 @@ layout: section
 
 <!-- 
 
-Some my consider parts of this talk as experimental.
+Some may consider parts of this talk  "experimental".
+
 For those that stick to only the what the official documentation recommends, that most certainly will be how this feels.
 
-In any case, however, the aim is to solve real problems more efficiently, while also reducing cognitive load on everyone writing their ember apps. 
+And what is a tried solution in open source may still be experimental within your organization -- every group of folks adopts knowledge at different speeds, and that's ok.
+
+In any case, however, the aim here is to solve real problems more efficiently, while also reducing cognitive load on everyone writing their ember apps. 
 
 
 -->
@@ -40,7 +43,7 @@ and not have to specify the file paths of multiple snippets which need to be
 stitched together to create a single concept.
 
 Thankfully!, we had a talk yesterday on this new format,
-but here is a quick tl;dr: for helping translate between old and new in your head:
+but here is a quick tl;dr (and maybe recap) for helping translate between old and new in your head:
 
 -->
 
