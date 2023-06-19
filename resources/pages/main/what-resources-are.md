@@ -59,6 +59,39 @@ Ember and starbeam Resources provide reactive implementations of this concept, a
 
 ---
 transition: fade
+layout: center 
+---
+
+<style>
+    .ts-native-container {
+       img.ts-native { height: 620px; position: fixed; left: 0; top: -45px; }
+       img.matt { position: fixed; right: 0; top: 0; width: 380px; }
+       .qr-code { position: fixed; bottom: 0; right: 0; };
+    }
+</style>
+
+
+<div class="ts-native-container">
+    <img class="ts-native" src="/pages/main/typescript-native.jpeg" />
+    <img class="matt" src="/pages/main/typescript-native-matt.png" />
+    <QRCode class="qr-code" size="260" value="https://twitter.com/mattpocockuk/status/1670687511763353600"></QRCode>
+</div>
+
+
+<!-- 
+
+Here is a post about TypeScript's implementation.
+
+The mechanics of this are a **smidge** different from Ember's Resources, 
+but the purpose is generally the same 
+
+_co-locate the setup and cleanup of a value_, and make the interaction 
+with that value easy so that the consumer of the abstraction does not 
+need to worry about potential cleanup
+-->
+
+---
+transition: fade
 layout: center
 ---
 
