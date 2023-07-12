@@ -107,6 +107,14 @@ src: ./pages/disclaimers/index.md
 ---
 
 ---
+src: ./pages/primitives/octane.md 
+---
+
+---
+src: ./pages/primitives/rethinking-reactivity.md 
+---
+
+---
 src: ./pages/primitives/index.md 
 ---
 

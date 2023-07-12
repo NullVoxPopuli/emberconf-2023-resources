@@ -57,7 +57,7 @@ layout: two-cols
 
 ::left::
 
-```js 
+```gjs 
 // app/components/first.gjs
 import SomeComponent from './my-component';
 
@@ -91,7 +91,7 @@ This is a template-only component
 
 <div v-click>
 
-```js 
+```gjs 
 // app/components/second.gjs
 import Component from '@glimmer/component';
 import SomeComponent from './my-component';
@@ -221,6 +221,10 @@ layout: center
   No one will be left behind.
 </div>
 
+<div v-click class="disclaimer-note">
+    Also ember-source@3.28 will be supported for the foreseeable and unforeseeable future.
+</div>
+
 <!-- 
 It's extremely important that there are easy migration paths within the community.
 
@@ -232,11 +236,14 @@ I do believe that libraries I've made have direct code-moddable transition paths
 to other, more official libraries -- such as Starbeam.
 
 At the moment, I haven't written any codemods, 
-becaues there is nothing certain to transition to quite yet.
+because there is nothing certain to transition to quite yet.
 
 Any behavioral difference between my libraries 
 and the "stuff to be migrated to" is considered a bug.
 
+!! click
+
+Also, I'm planning on keeping support for ember-source@3.28 for as long as I can. I know a good number of folks were caught off guard by some deprecations that came up during the v3 series, so, I want to make sure that folks still on v3 can use the patterns coming in the future.
 
 --
 

@@ -75,7 +75,7 @@ transition: fade
 # An interval <span class="inline-subtitle">after ...</span>
 
 
-```js 
+```gjs 
 // app/components/timer.gjs
 import { resource, cell } from 'ember-resources';
 

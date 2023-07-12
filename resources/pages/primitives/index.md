@@ -118,7 +118,7 @@ layout: two-cols
 
 <div>
 
-```js {all|5} 
+```gjs {all|5} 
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 
@@ -137,7 +137,7 @@ class Demo extends Component {
 
 <div v-click="2">
 
-```js {all|all|5-10}
+```gjs {all|all|5-10}
 import Component from '@glimmer/component';
 import { cell } from 'ember-resources';
 
@@ -197,7 +197,7 @@ layout: two-cols
 
 <div>
 
-```js
+```gjs
 // "component" state
 <template>
   {{#let (createState 1) as |s|}}
@@ -224,7 +224,7 @@ function createState(initialValue) {
 
 <div v-click>
 
-```js 
+```gjs 
 // "component" state
 <template>
   {{#let (createState 1) as |s|}}
@@ -270,7 +270,7 @@ layout: two-cols
 
 ::left:: 
 
-```js 
+```gjs 
 import { cell } from 'ember-resources';
 
 const value = cell(1);
@@ -302,7 +302,7 @@ layout: two-cols
 
 ::left::
 
-```js {all|9}
+```gjs {all|9}
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 
@@ -319,7 +319,7 @@ class Demo extends Component {
 
 ::right::
 
-```js {all|6}
+```gjs {all|6}
 import { cell } from 'ember-resources';
 
 const data = cell({ greeting: 'Hello World!' });
@@ -347,7 +347,7 @@ For about the last 28 months since Ember 3.25's release, we have had a lot more 
 
 # Elements
 
-```js {all|6-13}
+```gjs {all|6-13}
 <template>
 	<style>
 		.loading { /* ... */ }
@@ -379,7 +379,7 @@ Which I think is important because it means we can refer to **The MDN Docs**.
 
 # Modifiers
 
-```js
+```gjs
 import { on } from '@ember/modifier';
 import { cell } from 'ember-resources';
 
