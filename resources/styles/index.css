@@ -154,3 +154,7 @@ img.qr {
   border-radius: 5px;
   border: 1px solid #333;
 }
+
+  .display-list li {
+      font-size: 2rem;
+  }
