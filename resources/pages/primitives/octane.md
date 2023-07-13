@@ -37,9 +37,48 @@ layout: center
 
 # `@tracked` 
 
+```js
+export default class Demo extends Component {
+  @tracked name;
+}
+```
+
+<div v-click>
+
+✨✨✨✨✨
+
+```js 
+this.name = this.name + ' foo';
+```
+
+The decorator abstraction:
+
+```js
+export default class Demo extends Component {
+    get name() {
+        return this.#secretValue; /* 👋 hand wave 👋 */
+    }
+    set name(value) {
+        this.#secretValue = value;
+    }
+}
+```
+
+</div>
+
 <!-- 
 
- In Ember Octane, it was assumed that all reactive state, "root state", would exist on a property in class instance, which could then be decorated with the @tracked decorator. This allows the decorator to define a getter and setter so that the reactivity system can operate while still allowing "native property getting and setting" (e.g.: without Ember.get and Ember.set).
+ In Ember Octane, it was assumed that all reactive state, 
+ "root state" (the very root of what auto-tracking pulled on),  
+ would exist on a property in class instance, 
+ which could then be decorated with the @tracked decorator. 
+
+ !! click
+
+ This use of a decorator allows for a hidden getter and setter 
+ so that the reactivity system can operate 
+ while still allowing "native property getting and setting" 
+ (e.g.: without Ember.get and Ember.set).
 
 -->
 
@@ -47,10 +86,12 @@ layout: center
 
 ---
 transition: fade-out
-layout: center
+layout: two-cols
 ---
 
 # `function`s 
+
+::left::
 
 <ul class="display-list">
     <li v-click="1">
@@ -68,9 +109,58 @@ layout: center
     </li>
 </ul>
 
+::right::
+
+<div v-click>
+
+```js 
+import { helper } from '@ember/component/helper';
+
+export default helper(positional, named) {
+
+}
+```
+
+</div>
+<br>
+<div v-click>
+
+```js 
+import Helper from '@ember/component/helper';
+
+export default class MyHelper extends Helper {
+    compute(positional, named) {}
+    willDestroy() {} 
+}
+```
+
+</div>
+
 <!-- 
 
-In Ember Octane and before, these were called "helpers". It wasn't until ember-source@4.5 that plain functions became supported as a reactive primitive without the polyfill. However, "helpers", (now called "classic helpers") had two implementations: a simpler function-based version, and class-based version. These both required framework-specific abstractions to use and build, but the class-based version of these classic helpers had cleanup capabilities (albeit, awkwardly, via inheritance).
+In Ember Octane and before, 
+
+!!click 
+
+functions were called "helpers". 
+
+It wasn't until ember-source@4.5 that plain functions became supported as a reactive primitive without the polyfill. 
+
+However, "helpers", (now called "classic helpers") 
+had two implementations: 
+
+!!click
+
+a simpler function-based version, 
+
+!! click
+
+and class-based version. 
+
+These both required framework-specific abstractions to use and build, 
+
+but the class-based version of these classic helpers 
+had cleanup capabilities (albeit, awkwardly, via inheritance).
 
 -->
 
