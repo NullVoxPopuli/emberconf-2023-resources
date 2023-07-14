@@ -110,13 +110,13 @@ because reactivity is not built in to the browser.
 !! click
 
 we'll call values "cells", 
-and Cells will provide a the abstraction with which we can built at-tracked, 
-and allow us to use reactive values everywhere
+and Cells will provide the abstraction with which we can built at-tracked, 
+and allow us to use reactive values everywhere -- not just classess
 
 !! click
 
 functions, we can leave as-is, 
-because they can directly access the state on cells -- these will auto-track and are completely transparent to the renderer
+because they can directly access the state on cells -- these will auto-track and are completely transparent to the renderer -- just like getters in classes.
 
 !! click
 
