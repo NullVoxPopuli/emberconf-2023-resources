@@ -8,7 +8,10 @@ preload: false
 
 Find me [@NullVoxPopuli](https://linktr.ee/nullvoxpopuli)
 
-[![My LinkTree](/pages/qrcode.png)](https://linktr.ee/nullvoxpopuli)
+
+<a href="https://linktr.ee/nullvoxpopuli">
+<img src="/pages/qrcode.png" alt="QR Code" style="width: 300px;"/>
+</a>
 
 <!-- 
 

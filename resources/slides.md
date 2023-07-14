@@ -127,5 +127,9 @@ src: ./pages/main/what-resources-are.md
 ---
 
 ---
+src: ./pages/main/wrapping-up.md
+---
+
+---
 src: ./pages/end.md
 ---
