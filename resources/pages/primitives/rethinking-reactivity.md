@@ -1,6 +1,7 @@
 ---
 transition: fade-out
 layout: two-cols
+clicks: 3
 ---
 
 # Rethinking Reactivity

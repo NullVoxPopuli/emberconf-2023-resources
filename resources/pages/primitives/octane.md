@@ -68,12 +68,14 @@ export default class Demo extends Component {
 
 <!-- 
 
- In Ember Octane, it was assumed that all reactive state, 
+ In Ember Octane, it was assumed that all reactive state, or 
  "root state" (the very root of what auto-tracking pulled on),  
- would exist on a property in class instance, 
+ would exist on a property in a class instance, 
  which could then be decorated with the @tracked decorator. 
 
  !! click
+
+(point at these things with the mouse)
 
  This use of a decorator allows for a hidden getter and setter 
  so that the reactivity system can operate 
@@ -87,6 +89,7 @@ export default class Demo extends Component {
 ---
 transition: fade-out
 layout: two-cols
+clicks: 5
 ---
 
 # `function`s 
@@ -111,7 +114,7 @@ layout: two-cols
 
 ::right::
 
-<div v-click>
+<div v-click="2">
 
 ```js 
 import { helper } from '@ember/component/helper';
@@ -123,7 +126,7 @@ export default helper(positional, named) {
 
 </div>
 <br>
-<div v-click>
+<div v-click="3">
 
 ```js 
 import Helper from '@ember/component/helper';
@@ -160,6 +163,10 @@ and class-based version.
 These both required framework-specific abstractions to use and build, 
 
 but the class-based version of these classic helpers 
+
+!!click 
+!!click
+
 had cleanup capabilities (albeit, awkwardly, via inheritance).
 
 -->
@@ -188,15 +195,12 @@ modifiers
 
 or components?
 
-We'll come back to these later, but when Octane was released, 
-ergonomic modifiers in user-land were not yet available.
-
-Of course, we have a library to help out now, but 
-anyway, -- keep the concept of modifiers in the back of your head.
+We'll come back to these later, and yesterday, 
+you may have seen something in the Keynote about why they may be coming later in this presentation.
 
 
 For components, I am going to propose that those are not primitives at all.
 
-_stand by_.
+But first... 
 
 -->

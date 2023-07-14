@@ -15,6 +15,7 @@ And what is a tried solution in open source may still be experimental within you
 
 In any case, however, the aim here is to solve real problems more efficiently, while also reducing cognitive load on everyone writing their ember apps. 
 
+I will be providing learning materials, and tutorials that folks can use if they want to learn more.
 
 -->
 
@@ -182,7 +183,8 @@ All of this is my opinion --
 !! click 
 
 but I'm comitted to these opinions, 
-and genuinely believe they make not only our ecosystem stronger and better, 
+I mean, not to say some of these opinions are not shared by others.. but
+I genuinely believe they make not only our ecosystem stronger and better, 
 but the concepts benefit all ecosystems outside of ember as well.
 
 -->
@@ -206,6 +208,8 @@ There are no RFCs for any of what you're about to see -- as far as becoming part
 
 However, I do plan on helping bring these concepts to the default experience.
 
+...And I'm starting an RFC on defining what resources are to ember when I get home after the conference.
+
 -->
 
 
@@ -226,18 +230,21 @@ layout: center
 </div>
 
 <!-- 
+Ok, last disclaimer!!, I promise.
+
 It's extremely important that there are easy migration paths within the community.
 
 !!click 
 
 Programming is hard, and some migration paths are not (and have not been) so easy.
 
-I do believe that libraries I've made have direct code-moddable transition paths
-to other, more official libraries -- such as Starbeam.
+The overall goal for everything I'm working on for and around this talk, Resources, etc 
+is to be a _polyfill_ for Starbeam.
 
 At the moment, I haven't written any codemods, 
-because there is nothing certain to transition to quite yet.
+because there are some design details still being worked out in Starbeam.
 
+But  
 Any behavioral difference between my libraries 
 and the "stuff to be migrated to" is considered a bug.
 

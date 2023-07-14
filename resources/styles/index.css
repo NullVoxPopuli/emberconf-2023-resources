@@ -1,3 +1,7 @@
+.slidev-presenter #slideshow {
+  border: 1px solid;
+}
+
 canvas.qr-code {
   position: fixed;
   right: 1rem;
@@ -31,7 +35,7 @@ canvas.qr-code {
 blockquote.big {
   font-size: 2rem;
 }
-blockquote.big > p {
+blockquote.big p {
   line-height: 2.5rem;
 }
 
@@ -96,14 +100,10 @@ code {
   font-size: 0.65rem;
 }
 
+.slidev-layout.default.slidev-page > div.absolute.left-8.right-8.bottom-6.text-sm,
+.slidev-layout .absolute.left-8.flex.flex-row.gap-4.items-end,
+.slidev-layout .absolute .absolute.left-0.bottom-0.flex.flex-row.items-end.gap-4,
 .slidev-layout.cover > svg.absolute.bottom-12.left-1\/2.transform.\-translate-x-1\/2.w-auto.h-8 {
-  display: none;
-}
-.slidev-layout .absolute.left-8.flex.flex-row.gap-4.items-end {
-  display: none;
-}
-
-.slidev-layout .absolute .absolute.left-0.bottom-0.flex.flex-row.items-end.gap-4 {
   display: none;
 }
 
