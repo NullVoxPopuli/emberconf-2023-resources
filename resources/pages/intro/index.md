@@ -68,13 +68,40 @@ layout: center
 # Links & QR Codes 🥳
 
 <!-- 
-This presentation has links,
+This presentation has a lot of links,
 and is written to still be useful and 
 have all the context when uploaded and read.
 
 However, when live, links aren't very helpful.
 
-All links will have have QR Codes
+All links will have have QR Codes.
+
+QR Codes will contain links to various documentation and live demos.
+
+I think it's probably normal for folks to feel like 
+they shouldn't have their phones out during a presentation,
+but in this presentation I encourage anyone and everyone to 
+scan the QR Codes 
+(hopefully you have a phone that does the proper thing security wise, 
+ and doesn't automatically navigate or execute what is within the QR Code, 
+ because -- I wouldn't trust me, I mean, I do trust me, 
+ but it's good to be skeptical of QR codes if you're not set up to 
+ inspect the QR Code before navigating to it.
+
+ I promise all the QR Codes are safe though, this is kind of part general disclaimer,
+ part encouragement.
+
+ --- depending on the spread in the room ----
+
+ In any case, if you're too far away to to scan a QR code, and some QR codes may be hard to scan from the back of the room, I encourage and welcome folks to shift around 
+ while I'm talking about things so that you can get a clear scan.
+
+ ----------------
+
+ The slides will be available on GitHub, 
+ and published to and viewable from github pages, 
+ if you want to wait until later to scan / click the QR Codes as well.
+
 -->
 
 ---
