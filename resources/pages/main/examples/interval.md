@@ -46,9 +46,12 @@ export default class Timer extends Component {
 <!-- 
 
 Before diving in to this example, I'm sure the first thing ya'll saw
-was the static on the right,
-this QR code will take you to a REPL/Playground whene you can play with 
-the example if you want.
+was the static on the right
+this is a big QR Code, as it contains all the text on the slide
+and re-directs you to a REPL or Playground where you can play this example..
+
+If you'd like to play along, and your phone happens to not be a telescope, 
+feel free to get closer to scan the QR code.
 
 
 Here, we define an interval which we use to represent a clock.

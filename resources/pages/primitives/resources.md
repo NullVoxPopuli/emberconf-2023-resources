@@ -1,5 +1,6 @@
 ---
 layout: center
+transition: fade-out
 ---
 
 # What's a Resource?
@@ -33,8 +34,10 @@ It is a reactive function, yet represents a value. It is bound to a lifetime, an
 
 ---
 layout: center
-transition: fade
+transition: fade-out
 ---
+
+<div class="slide-category">What's a Resource?</div> 
 
 # What does a resource look like?
 
@@ -49,6 +52,7 @@ layout: default
 transition: fade
 ---
 
+<div class="slide-category">What's a Resource?</div> 
 <div class="related-note">What does a resource look like?</div>
 <br>
 <br>
@@ -105,6 +109,7 @@ layout: default
 transition: fade
 ---
 
+<div class="slide-category">What's a Resource?</div> 
 <div class="related-note">What does a resource look like?</div>
 <br>
 <br>
@@ -149,6 +154,7 @@ layout: default
 transition: fade
 ---
 
+<div class="slide-category">What's a Resource?</div> 
 <div class="related-note">What does a resource look like?</div>
 <br>
 <br>
@@ -207,6 +213,175 @@ When Resources land natively in ember this wrapping "resourceFactory" won't be n
 layout: center
 transition: fade
 ---
+
+<div class="slide-category">What's a Resource?</div> 
+
+
+# Resources (can) have cleanup
+
+
+<!-- 
+
+Cleanup is useful for cleaning up event listeners, 
+cancelling observers, timers, disconnecting from websockets, 
+maybe freeing up memory -- bunch of things we could clean up.
+
+-->
+
+layout: center
+transition: fade
+---
+
+<div class="slide-category">What's a Resource?</div> 
+<div class="related-note">Resources (can) have cleanup</div>
+
+```gjs {all|7} 
+import { resource, cell } from 'ember-resources';
+
+const Clock = resource(({ on }) => {
+	let time = cell(new Date());
+	let interval = setInterval(() => time.current = new Date(), 1000);
+
+	on.cleanup(() => clearInterval(interval));
+
+	return time;
+});
+
+<template>
+	It is: <time>{{Clock}}</time>
+</template>
+```
+
+<!-- 
+So far, we've been looking at a Clock example
+
+!!click
+
+where the interval needs to be cleaned up.
+
+Let's take a look at another situation which may need cleanup.
+
+-->
+
+---
+layout: center
+transition: fade
+---
+
+<div class="slide-category">What's a Resource?</div> 
+<div class="related-note">Resources (can) have cleanup</div>
+
+```js
+import Component from '@glimmer/component';
+
+class Modal extends Component {
+  constructor(owner, args) {
+    super(owner, args);
+
+    this.abortController = new AbortController();
+
+    fetch('...', { 
+        signal: this.abortController.signal 
+    }).then( /* ... */ );
+  }
+
+  willDestroy() {
+    this.abortController.abort();
+  }
+}
+```
+
+<!-- 
+
+Cleanup, in general, is a concept we're likely used to.
+Components, Modifiers, class-based-helpers, 
+all have a `willDestroy` method.
+
+
+-->
+
+---
+layout: center
+transition: fade
+---
+
+<div class="slide-category">What's a Resource?</div> 
+<div class="related-note">Resources (can) have cleanup</div>
+
+```js
+import Component from '@glimmer/component';
+import { registerDestructor } from '@ember/destroyable';
+
+class Modal extends Component {
+  constructor(owner, args) {
+    super(owner, args);
+
+    let abortController = new AbortController();
+
+    fetch('...', { 
+        signal: abortController.signal 
+    }).then( /* ... */ );
+
+    registerDestructor(this, () => abortController.abort());
+  }
+}
+```
+
+<!-- 
+
+If you're the type of person 
+who likes using features as they are released in to the framework, 
+
+you may have seen at-ember-destroyable. 
+
+Cleanup is co-located with setup. 
+
+This is an improvement...
+
+... but we can still do even better... 
+
+-->
+
+---
+transition: fade
+layout: center
+---
+
+<div class="slide-category">What's a Resource?</div> 
+<div class="related-note">Resources (can) have cleanup</div>
+
+
+```js
+import { resource } from 'ember-resources';
+
+const Fetch = resource(({ on }) => {
+    let abortController = new AbortController();
+
+    fetch('...', { 
+        signal: abortController.signal 
+    }).then( /* ... */ );
+
+    on.cleanup(() => abortController.abort());
+
+    /* ... */
+});
+```
+
+<!-- 
+
+Resources have more ergonomic cleanup 
+
+it is co-located with the behavior, 
+which is a goal that willDestroy methods did not care about.
+
+-->
+
+---
+layout: center
+transition: fade
+---
+
+<div class="slide-category">What's a Resource?</div> 
 
 # Resources have a lifetime
 
@@ -268,114 +443,23 @@ When the parent lifetime ends, so do its descendants.
 
 -->
 
----
-layout: center
-transition: fade
----
-
-
-# Resources (can) have cleanup
-
-
-<!-- 
-
-Cleanup is useful for cleaning up event listeners, 
-cancelling observers, timers, disconnecting from websockets, 
-maybe freeing up memory -- bunch of things we could clean up.
-
--->
-
----
-layout: center
-transition: fade
----
-
-<div class="related-note">Resources (can) have cleanup</div>
-
-```js
-import Component from '@glimmer/component';
-import { registerDestructor } from '@ember/destroyable';
-
-class Modal extends Component {
-  constructor(owner, args) {
-    super(owner, args);
-
-    let abortController = new AbortController();
-
-    fetch('...', { 
-        signal: abortController.signal 
-    }).then( /* ... */ );
-
-    registerDestructor(this, () => abortController.abort());
-  }
-
-  willDestroy() {}
-}
-```
-
-<!-- 
-
-This is a concept we're likely used to.
-Components, Modifiers, class-based-helpers, 
-all have a `willDestroy` method.
-
-
-If you're the type of person who likes using features as they are released in the framework, you may have seen at-ember-destroyable. 
-
-Cleanup is co-located with setup. 
-
-... but we can do better... 
-
--->
-
----
-transition: fade
-layout: center
----
-
-<div class="related-note">Resources (can) have cleanup</div>
-
-
-```js
-import { resource } from 'ember-resources';
-
-const Fetch = resource(({ on }) => {
-    let abortController = new AbortController();
-
-    fetch('...', { 
-        signal: abortController.signal 
-    }).then( /* ... */ );
-
-    on.cleanup(() => abortController.abort());
-
-    /* ... */
-});
-```
-
-<!-- 
-
-Resources have more ergonomic cleanup 
-
-
-
-it is co-located with the behavior, 
-which is a goal that willDestroy methods did not care about.
-
--->
 
 ---
 transition: fade-out
 layout: center
 ---
 
+<div class="slide-category">What's a Resource?</div> 
+
 # Resources are automatically linked
 
 
 <!-- 
 
-When working with the framework, we need to hook in the owner, 
+When working with the framework, 
+we often need to hook in the application owner for access to services...,
 
-and set up the destroyable relationships.
+and set up the destroyable relationships to the **appropriate lifetime.**
 
 If you've ever done this yourself, it's *a* . *lot* . *of* . *work*
 
@@ -387,6 +471,7 @@ transition: fade
 layout: center
 ---
 
+<div class="slide-category">What's a Resource?</div> 
 <div class="related-note">Resources are automatically linked</div>
 
 ```js {all|5|11|13|all} 
@@ -441,6 +526,7 @@ transition: fade
 layout: two-cols
 ---
 
+<div class="slide-category">What's a Resource?</div> 
 <div class="related-note">Resources are automatically linked</div>
 
 <br>
@@ -523,6 +609,8 @@ transition: fade-out
 layout: center
 ---
 
+<div class="slide-category">What's a Resource?</div> 
+
 # Resources compose 
 
 
@@ -543,6 +631,7 @@ transition: fade
 layout: center 
 ---
 
+<div class="slide-category">What's a Resource?</div> 
 <div class="related-note">Resources compose</div>
 
 
@@ -559,7 +648,7 @@ const Now = resource(({ on }) => {
 
 <div v-click="1">
 
-```js {8-12|9|14-16}
+```gjs {all|8-12|9|14-16}
 const formatter = new Intl.DateTimeFormat("en-US", {
   hour: "numeric",
   minute: "numeric",
@@ -586,9 +675,9 @@ Using our resource that represents the current time, Now.
 
 !!click 
 
-when defining a new resource, FormattedNow, 
+we can define a new resource, FormattedNow, 
 
-!!click
+!!click (twice, because sli.dev is buggy)
 
 we can _compose_ Now via the `use` function.
 
