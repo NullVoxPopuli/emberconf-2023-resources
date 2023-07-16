@@ -79,7 +79,40 @@ layout: center
 ---
 <div class="related-note">Introduction</div>
 
+<div class="custom-slide">
+
+<div v-click="1" class="sneaky-header">
+
 # Links & QR Codes 🥳
+
+</div>
+
+<style>
+    .custom-slide .sneaky-header.slidev-vclick-hidden {
+      opacity: 1 !important;
+    }
+    .custom-slide  h1 {
+        transition: all 0.1s;
+    }
+    .custom-slide .sneaky-header.slidev-vclick-prior h1 {
+        transform: translateX(5rem);
+    }
+   .qr-proof-video { 
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+   }
+</style>
+
+<video 
+  controls loop 
+  class="qr-proof-video" 
+  v-click="1" 
+  src="/pages/intro/qr-code-scan.webm"></video>
+
+</div>
 
 <!-- 
 This presentation has a lot of links,
@@ -92,32 +125,25 @@ All links will have have QR Codes.
 
 QR Codes will contain links to various documentation and live demos.
 
-I think it's probably normal for folks to feel like 
-they shouldn't have their phones out during a presentation,
-but in this presentation I encourage anyone and everyone to 
-scan the QR Codes 
-(hopefully you have a phone that does the proper thing security wise, 
- and doesn't automatically navigate or execute what is within the QR Code, 
- because -- I wouldn't trust me, I mean, I do trust me, 
- but it's good to be skeptical of QR codes if you're not set up to 
- inspect the QR Code before navigating to it.
 
- I promise all the QR Codes are safe though, this is kind of part general disclaimer,
- part encouragement.
+I did test this with probably one of the more complicated QR codes in here.
+
+!! click, and then click play on the video
+
+But there are a lot of factors when it comes to QR code scanning
 
  --- depending on the spread in the room ----
 
- In any case, 
 
+... and since we all just got back from lunch, some of ya'll may be a little sleepy while digesting.
 
-since we all just got back from lunch, some of ya'll may be a little sleepy while digesting.
-
-and since some QR codes may be hard to scan from the back of the room, 
+... and since some QR codes may be hard to scan from the back of the room (like the one in the video here)
 
 if you're too far away to to scan a QR code, 
 
 I encourage and welcome folks to shift around 
  while I'm talking about things so that you can get a clear scan.
+
 
 
  ----------------
@@ -127,6 +153,7 @@ I encourage and welcome folks to shift around
  if you want to wait until later to scan / click the QR Codes as well.
 
 -->
+
 
 ---
 transition: fade
