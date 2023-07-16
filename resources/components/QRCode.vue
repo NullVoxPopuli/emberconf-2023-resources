@@ -8,14 +8,15 @@
 <style scoped>
 .qr-link {
   text-decoration: none; 
+  display: inline-block;
   border: none;
+  transition: all 0.1s;
 }
 .qr-link:hover {
   border: none;
   opacity: .8;
   text-decoration: none;
-  transform: translateY(-5px) skewX(1deg);
-  transition: all 0.1s;
+  transform: translateY(-4px) skewX(1deg);
 }
 .qr-link :deep(p) { margin: 0; padding: 0; }
 </style>

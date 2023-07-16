@@ -100,6 +100,11 @@ code {
   font-size: 0.65rem;
 }
 
+.slidev-layout {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
 .slidev-layout.default.slidev-page > div.absolute.left-8.right-8.bottom-6.text-sm,
 .slidev-layout .absolute.left-8.flex.flex-row.gap-4.items-end,
 .slidev-layout .absolute .absolute.left-0.bottom-0.flex.flex-row.items-end.gap-4,

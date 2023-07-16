@@ -122,10 +122,85 @@ because they can directly access the state on cells -- these will auto-track and
 
 functions with lifetime and cleanup... are _Resources_.
 
-These are the key abstraction that I'll focus on for the rest of this talk.
+These are the key abstraction that I'll focus on for (almost) the rest of this talk.
 
 
 
 !! click until you get to the next slide, Sli.dev has bugs.
+
+-->
+
+---
+transition: fade
+layout: fact
+---
+
+# Cells
+
+```js
+export default class Demo extends Component {
+  @tracked name;
+}
+```
+
+=>
+
+```js 
+export default class Demo extends Component {
+    get name() {
+        return this.#secretValue; /* 👋 hand wave 👋 */
+    }
+    set name(value) {
+        this.#secretValue = value;
+    }
+}
+```
+
+<!-- 
+
+a few slides ago, we hand-waved over the fact that `@tracked` abstracts a secret value 
+-->
+
+---
+transition: fade
+layout: fact
+---
+
+# Cells
+
+```js 
+export default class Demo extends Component {
+    get name() {
+        return this.#secretValue; /* 👋 hand wave 👋 */
+    }
+    set name(value) {
+        this.#secretValue = value;
+    }
+}
+```
+
+=>
+
+```js {all|2}
+export default class Demo extends Component {
+    #secretValue = cell();
+
+    get name() {
+        return this.#secretValue.current;
+    }
+    set name(value) {
+        this.#secretValue.current = value;
+    }
+}
+```
+
+<!-- 
+
+here are the secrets behind the hand wave. 
+
+!! click
+
+the secretValue *can* be thought of as .. a cell.
+
 
 -->

@@ -82,6 +82,8 @@ export default class Demo extends Component {
  while still allowing "native property getting and setting" 
  (e.g.: without Ember.get and Ember.set).
 
+We'll see how the secret value works later.
+
 -->
 
 

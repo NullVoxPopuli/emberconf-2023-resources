@@ -13,10 +13,12 @@ A resource is a value with a lifetime and (optional) cleanup logic.
 </blockquote>
 
 <div class="qr-code-list corner-br">
-<QRCode value="https://www.starbeamjs.com/guides/fundamentals/resources.html"></QRCode>
-(Starbeam)
-<QRCode value="https://github.com/NullVoxPopuli/ember-resources/blob/main/docs/docs/README.md"></QRCode>
-(ember-resources)
+<QRCode size="200" value="https://www.starbeamjs.com/guides/fundamentals/resources.html">
+Starbeam
+</QRCode>
+<QRCode size="200" value="https://github.com/NullVoxPopuli/ember-resources/blob/main/docs/docs/README.md">
+ember-resources
+</QRCode>
 </div>
 
 
@@ -69,13 +71,12 @@ const Clock = resource(({ on }) => {
 ```
 
 <div class="corner-br">
-Live demo
-<QRCode class="qr-code" size="240" value="https://tutorial.glimdown.com/2-reactivity/5-resources?showAnswer=1"></QRCode>
+<QRCode class="qr-code" size="240" value="https://tutorial.glimdown.com/2-reactivity/5-resources?showAnswer=1">Live demo</QRCode>
 </div>
 
 <!-- 
 
-This is what they look like using ember-resources, 
+This is what they look like when using ember-resources, 
 which you can install today -- all the way back to ember 3.28, you can do this.
 
 For this particular resource,
@@ -323,70 +324,9 @@ If you're the type of person who likes using features as they are released in th
 
 Cleanup is co-located with setup. 
 
-... but we can do better... which we'll get to!
+... but we can do better... 
 
 -->
-
----
-transition: fade
-layout: center
----
-
-# Resources are automatically linked
-
-
-<!-- 
-
-When working with the framework, we need to hook in the owner, 
-
-and set up the destroyable relationships.
-
-If you've ever done this yourself, it's *a* . *lot* . *of* . *work*
-
-
--->
-
----
-transition: fade
-layout: center
----
-
-<div class="related-note">Resources are automatically linked</div>
-
-```js 
-import { setOwner, getOwner } from '@ember/owner';
-import { associateDestroyableChild } from '@ember/destroyable';
-
-class Demo extends Component {
-    @cached 
-    get myInstance() {
-        let instance = new MyClass({
-            foo: () => this.args.foo,
-        });
-
-        setOwner(instance, getOwner(this));
-
-        associateDestroyableChild(this, instance);
-
-        return instance;
-    }
-
-}
-
-```
-
-<!-- 
-
-Here is what the code looks like if you wanted to link up a 
-custom class to a component, so that it gets the owner, and 
-has its destroyable method called when the component is torn down./
-
-We don't want to do this! This is a lot of boilerplate! 
-
-Resources do this for us.
-
--->
-
 
 ---
 transition: fade
@@ -421,6 +361,241 @@ Resources have more ergonomic cleanup
 it is co-located with the behavior, 
 which is a goal that willDestroy methods did not care about.
 
+-->
+
+---
+transition: fade-out
+layout: center
+---
+
+# Resources are automatically linked
+
+
+<!-- 
+
+When working with the framework, we need to hook in the owner, 
+
+and set up the destroyable relationships.
+
+If you've ever done this yourself, it's *a* . *lot* . *of* . *work*
+
 
 -->
 
+---
+transition: fade
+layout: center
+---
+
+<div class="related-note">Resources are automatically linked</div>
+
+```js {all|5|11|13|all} 
+import { setOwner, getOwner } from '@ember/owner';
+import { associateDestroyableChild } from '@ember/destroyable';
+
+class Demo extends Component {
+    @cached 
+    get myInstance() {
+        let instance = new MyClass({
+            foo: () => this.args.foo,
+        });
+
+        setOwner(instance, getOwner(this));
+
+        associateDestroyableChild(this, instance);
+
+        return instance;
+    }
+
+}
+```
+
+<!-- 
+
+Here is what the code looks like if you wanted to link up a 
+custom class to a component, so that it gets the owner, and 
+has its destroyable method called when the component is torn down.
+
+!! click
+
+we have at-cached
+
+!! click 
+
+we have setOwner and getOWner
+
+!! click
+
+we have associateDEstroyableChild
+
+!! click
+
+We don't want to do this! This is a lot of boilerplate! 
+
+Resources do this for us.
+
+-->
+
+---
+transition: fade
+layout: two-cols
+---
+
+<div class="related-note">Resources are automatically linked</div>
+
+<br>
+
+::left::
+
+```js {all|2|all} 
+const MyResource = resourceFactory((foo) => {
+    return resource(({ owner, on }) => {
+        on.cleanup(() => { /* ... */ });
+        /* ... */
+    });
+});
+```
+
+::right::
+
+<div v-click="2">
+
+```gjs 
+import { MyResource } from "./my-resource";
+
+<template>
+    {{#if @maybeTrue}}
+        {{MyResource @foo}}
+    {{/if}}
+</template>
+```
+
+</div>
+<div v-click="3">
+
+```gjs
+
+export default class Demo extends Component {
+    myResource = 
+      use(this, MyResource(() => this.args.foo));
+
+    <template>
+        {{this.myResource}}
+    </template>
+}
+```
+
+
+</div>
+
+<!-- 
+
+When we use a resource 
+
+!!click
+
+- it automatically has an owner
+
+!! click
+
+- we get linked template invocation for free
+
+!! click
+
+- and it automatically has the correct destroyable association regardless of where it is used. 
+
+So when it's used in a 
+
+template-block, a component, within another resource, or a service, 
+
+and that parent 
+
+template-block, component, resource or service is destroyed, 
+
+so will that resource be also destroyed.
+
+-->
+
+
+
+---
+transition: fade-out
+layout: center
+---
+
+# Resources compose 
+
+
+<!-- 
+
+Resources can easily be composed together, 
+
+they abstract away the details and inner-workings of the framework
+
+that would otherwise be required to compose utilities
+
+
+-->
+
+
+---
+transition: fade
+layout: center 
+---
+
+<div class="related-note">Resources compose</div>
+
+
+```js {all|all|} 
+const Now = resource(({ on }) => {
+   const now = cell(new Date());
+   const interval = setInterval(() => now.current = new Date(), 1000);
+
+   on.cleanup(() => clearInterval(interval));
+
+   return now;
+})
+```
+
+<div v-click="1">
+
+```js {8-12|9|14-16}
+const formatter = new Intl.DateTimeFormat("en-US", {
+  hour: "numeric",
+  minute: "numeric",
+  second: "numeric",
+  hour12: false,
+});
+
+const FormattedNow = resource(({ use }) => {
+    const now = use(Now);
+
+    return () => formatter.format(now.current);
+});
+
+<template>
+    {{FormattedNow}} is formatted {{Now}}
+</template>
+```
+
+</div>
+
+<!-- 
+
+Using our resource that represents the current time, Now.
+
+!!click 
+
+when defining a new resource, FormattedNow, 
+
+!!click
+
+we can _compose_ Now via the `use` function.
+
+!! click
+
+And it renders in a component the exact same way 
+
+
+
+-->

@@ -107,8 +107,18 @@ scan the QR Codes
 
  --- depending on the spread in the room ----
 
- In any case, if you're too far away to to scan a QR code, and some QR codes may be hard to scan from the back of the room, I encourage and welcome folks to shift around 
+ In any case, 
+
+
+since we all just got back from lunch, some of ya'll may be a little sleepy while digesting.
+
+and since some QR codes may be hard to scan from the back of the room, 
+
+if you're too far away to to scan a QR code, 
+
+I encourage and welcome folks to shift around 
  while I'm talking about things so that you can get a clear scan.
+
 
  ----------------
 
@@ -157,12 +167,12 @@ layout: center
 # Things about me 
 
 <div class="flex gap-2">
-<div style="max-width: 100px;">
+<div style="max-width: 200px;">
 
 ![My Partner](/pages/intro/partner.jpg)
 
 </div>
-<div style="max-height: 100px;max-width: 200px;">
+<div style="max-height: 200px;max-width: 600px;">
 
 ![BeatSaber screenshot](/pages/intro/beatsaber.png)
 
@@ -170,7 +180,8 @@ layout: center
 </div>
 
 <!-- 
-This is a picture of my partner and favorite human.
+On the left is a picture of my partner and favorite human.
+Without her support, I'd've lost my mind ages ago. 
 
-Outside of programming, I like video games, and swing dancing.
+Outside of programming, I like swing dancing, and video games (this hereon the right is a screenshot from the Virtual reality game, Beat Saber)
 -->

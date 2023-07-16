@@ -7,13 +7,17 @@ layout: section
 
 <!-- 
 
-Some may consider parts of this talk  "experimental".
+I'm going to try to get through these real quick, but.
 
-For those that stick to only the what the official documentation recommends, that most certainly will be how this feels.
+Some may consider parts of this talk  "experimental" .
+and that's ok.
 
-And what is a tried solution in open source may still be experimental within your organization -- every group of folks adopts knowledge at different speeds, and that's ok.
+For those that stick to only the what the official documentation recommends, this may all feel experimental and out of reach.
 
-In any case, however, the aim here is to solve real problems more efficiently, while also reducing cognitive load on everyone writing their ember apps. 
+what is a tried solution in open source may even still feel experimental within your organization -- every group of folks adopts knowledge at different speeds, and that's ok.
+
+
+In any case, the aim here is to solve real problems more efficiently, while also reducing cognitive load on everyone writing their ember apps. 
 
 I will be providing learning materials, and tutorials that folks can use if they want to learn more.
 
@@ -29,11 +33,9 @@ layout: center
 
 [RFC#779](https://github.com/emberjs/rfcs/pull/779) merged March 4th 2022, and research began maybe about a year prior.
 
-<img 
-    src="/pages/disclaimers/rfc-779.png" 
-    alt="QR Code for the above linked RFC" 
-    class="qr"
-/>
+<div class="corner-br">
+<QRCode value="https://github.com/emberjs/rfcs/pull/779" size="200">RFC #799</QRCode>
+</div>
 
 <!--
 
