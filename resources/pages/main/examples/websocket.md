@@ -5,8 +5,42 @@ layout: two-cols
 
 # A WebSocket <span class="inline-subtitle">before ...</span>
 
+<style>
+    .slidev-code-wrapper {
+        max-height: 440px;
+        overflow: auto;
+    }
+</style>
+
 ```gjs
-const two = 2;
+export default class Demo extends Component {
+    @tracked lastMessage = null;
+
+    constructor(owner, args) {
+        super(owner, args);
+
+        this.#channel = Channel.subscribe(this.args.channelName);
+        this.#channel.onMessage((message) => {
+            this.lastMessage = message;
+        });
+    }
+
+    get mostRecent() {
+        let { channelName } = this.args;
+
+        return this.lastMessage === null
+            ? `[${channelName}] No messages received yet`
+            : `[${channelName}] ${this.lastMessage.current}`;
+    }
+
+    willDestroy() {
+        this.#channel?.unsubscribe();
+    }
+
+    <template>
+      Most recent: {{this.mostRecent}}
+    </template>
+}
 ```
 
 <!-- 
@@ -15,6 +49,11 @@ the new spiderman movie: across the spiderverse.
 
 We can assume that the method of retrieving that information exists, and the
 implementation might look a little something like this.
+
+
+this isn't a *lot* of code, but it does require scrolling
+
+!! scroll to the bottom
 
 
 What we are calling a value is "the most recent person to have seen Across the SpiderVerse"
