@@ -13,7 +13,7 @@ layout: two-cols
 </style>
 
 ```gjs
-export default class Demo extends Component {
+class Demo extends Component {
     @tracked lastMessage = null;
 
     constructor(owner, args) {
@@ -38,9 +38,13 @@ export default class Demo extends Component {
     }
 
     <template>
-      Most recent: {{this.mostRecent}}
+      {{this.mostRecent}}
     </template>
 }
+
+<template>
+    Most recent: <Demo @channelName="Across the SpiderVerse" />
+</template>
 ```
 
 <!-- 
@@ -54,6 +58,7 @@ implementation might look a little something like this.
 this isn't a *lot* of code, but it does require scrolling
 
 !! scroll to the bottom
+!! SCROLLING DOESN"T TRANSFER TO THE PRESENTER SCREEN, move the mouse
 
 
 What we are calling a value is "the most recent person to have seen Across the SpiderVerse"
