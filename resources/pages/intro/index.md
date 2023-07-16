@@ -42,11 +42,25 @@ layout: full
 
 <div class="qr-code-list qr-code-footer">
 
-[![My Blog](/pages/intro/nvp.com.png)](https://nullvoxpopuli.com/)
-[![My GitHub](/pages/intro/nvp-github.png)](https://github.com/nullvoxpopuli)
-[![My Twitter](/pages/intro/nvp-twitter.png)](https://twitter.com/nullvoxpopuli)
-[![My Active OSS Project](/pages/intro/tutorial.png)](https://tutorial.glimdown.com)
-[![My Glimmer / Markdown REPL](/pages/intro/limber.png)](https://limber.glimdown.com)
+<QRCode value="https://nullvoxpopuli.com" size="150">
+  Blog
+</QRCode>
+<QRCode value="https://github.com/nullvoxpopuli" size="150">
+  GitHub
+</QRCode>
+<QRCode value="https://twitter.com/nullvoxpopuli" size="150">
+  Twitter
+</QRCode>
+<QRCode value="https://tutorial.glimdown.com" size="150">
+  
+_The Tutorial_
+
+</QRCode>
+<QRCode value="https://limber.glimdown.com" size="150">
+  
+_REPL_
+
+</QRCode>
 
 </div>
 
