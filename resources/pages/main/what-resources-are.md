@@ -56,6 +56,10 @@ Let's start with some examples of Resources as Values
 src: "./examples/interval.md"
 ---
 
+---
+src: "./examples/websocket.md"
+---
+
 
 ---
 
@@ -128,7 +132,7 @@ get foo() {
 
 
 # These look familiar?
-
+useEffect was taught wrong is the main thing.
 When squinting, they kinda look like effects, yet are derived data, and effects cause performance issues by rendering more times than needed.
 Also, like hooks, in that they can be composed, and represent a value.
 

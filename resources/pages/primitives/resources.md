@@ -385,7 +385,20 @@ transition: fade
 
 # Resources have a lifetime
 
-<div v-click>
+<!-- 
+
+So resources have a lifetime -- what's a lifetime?
+
+-->
+
+---
+layout: center
+transition: fade
+---
+
+<div class="slide-category">What's a Resource?</div> 
+<div class="related-note">Resources have a lifetime</div>
+
 
 ```mermaid 
 %%{init: { 'gitGraph': { 
@@ -413,14 +426,8 @@ gitGraph
     commit
 ```
 
-</div>
-
 
 <!-- 
-
-So resources have a lifetime -- what's a lifetime?
-
-!! click
 
 An application has a lifetime, it has a start and an end.
 During testing, oftentimes, you have one application lifetime per test
@@ -435,11 +442,12 @@ This recurses all the way through the rendering tree.
 !! prepare to mouse / point at the bottom lifetime
 
 Along and within that rendering tree, 
-we may have a Resource that fetches data for this route
-
+we may have a Resource (or it could be a component or .. something) that fetches data for this route
 
 
 When the parent lifetime ends, so do its descendants.
+
+I think some vampyre lore operates this way.
 
 -->
 

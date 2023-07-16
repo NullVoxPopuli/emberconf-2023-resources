@@ -63,7 +63,8 @@ This has a number of problems:
     since components lend themselves to be overburdened with responsibility, it's very easy 
     intermingle different behaviors' cleanup and setup all over the place within a component. 
 - we've hacked in a lifecyle event via a set-once property.
-    the getter is still re-evaluated every time underscore time changes
+    the getter is still re-evaluated every time underscore time changes.
+    ... and if we were to add tracked data in to the mix, we are at high risk for a memory leak.
 
 
 This ... is a disaster.
@@ -83,10 +84,9 @@ transition: fade
 import { resource, cell } from 'ember-resources';
 
 const Time = resource(({ on }) => {
-  const time = cell(new Date());
-  const interval = setInterval(() => {
-    time.current = new Date()
-  }, 1000);
+  let time = cell(new Date());
+  let interval = 
+    setInterval(() => time.current = new Date(), 1000);
 
   on.cleanup(() => clearInterval(interval));
 
