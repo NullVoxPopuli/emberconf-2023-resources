@@ -1,5 +1,18 @@
 ---
 transition: fade
+layout: center
+---
+
+# Some  fun things 
+
+<!-- 
+
+So resources, are fun, and here are some somewhat related fun things 
+
+-->
+
+---
+transition: fade
 ---
 
 # ECMAScript Explicit Resource Management
@@ -82,15 +95,15 @@ need to worry about potential cleanup
 
 
 <div class="qr-code-list corner-br">
-<QRCode 
-    size="240"
-    value="https://github.com/NullVoxPopuli/ember-resources/blob/main/docs/docs/README.md"></QRCode>
-    Docs
 
-<QRCode 
-    size="240"
-    value="https://github.com/NullVoxPopuli/ember-resources"></QRCode>
-    Code
+<QRCode value="https://github.com/NullVoxPopuli/ember-resources/blob/main/docs/docs/README.md?" size="240">
+Docs
+</QRCode>
+
+<QRCode value="https://github.com/NullVoxPopuli/ember-resources?" size="240">
+Code
+</QRCode>
+
 </div>
 
 <!--
