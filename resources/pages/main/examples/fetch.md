@@ -7,11 +7,195 @@ layout: two-cols
 
 ---
 transition: fade
+layout: two-cols
 ---
 
 # `fetch` <span class="inline-subtitle">after ...</span>
 
+::left::
 
-[fetch-resource]: https://limber.glimdown.com/edit?c=MQAgSgpgtg9gLhAIgQzsgUOgBjg5gKwGcQAbASwDcJ0B6GkAIQCcyIAzEMqABxOggB2aOGRgCQMDrXoALOHG6EAXHVxk4MgK4AjAHQBjGFBoA5TSRIA1GAA8ACjG7myNaNohMAtEwiEYmpn1fGm0SGG0aKGQyAVcody8fPwCgwhpCQJpNERIaH1gETwATVGRdOEJ0Lm4YJjgQAGEjGoFBerYmIxAAcgABXHIoKA8aQx4xNu6AbirxupAAbxA4JmR9AGsIIpAAXxAOrr6BrmGmGhW19Zjcadma%2BaWxXf3OqB7etxHYIrI2ViZbtVavUlgAVVYbLYAeW0%2BAg%2BnqewOb26F0hRU82k0ZBIcE8MUIgLmIJASX8gQgADE1nBagBPAA0pN85KCz2RPU%2BiRZKV8t0whgEhHqARIlNqIAAvCAABRkIoASilAD4QFg5AplHRCAB3ZDcMi6IoQCg0fUubgQRx8GgAEgW8p2WBm6EFwvA0HgSFKUuZyQp1IR9JlMtFSslqoW6BApAg9WFqAgvtaOpA4Mu0Nh8LgMqWZEIABkYMgfgJcEplkxNBAmRRkCRqxWBOYSLsFTMY3x6oKVjALB5kxBUwBBbTAppCTr9pgy9vRkDznxwALiMm8kOPcQ7cOR%2Bcxthx-QyUNMEhMpaEMi4AT1is9qd8Ji6S-X%2BttvcxkDlGSCENJFqEBAO6LB%2Bn4gAmCDPsImjENK-5iIBUGoDBHZgZ%2BS4rn6AEQLoRBiLOqFgduoFfhov4yiUaDAVGaGfhBOF1g2SbSpRyCEZ%2BxG0QYqBHiGHidEw1EkTG9G6PxErSuJTDsTG266H8N4WHSIZCbRInCDh%2BZFiW1y%2Bmw9aATJbYumBGFMOI9GoduMzEa6CH1HYHh%2BOI0oADwIDwJCJsq84LAswBdrKkAFN6aCyqK4pMCAvTygqSrIMQAA%2BPgAI7VsKiU7DsH5%2BcAvzMmlvhwLoWnFqWuBZSRujVaQZW6X5MVFFlX7VTlCwQCQgGcBwqXpcVjHVpVtF%2Bb1RW6ANOE3sMQ2fn5NC-DNc1dpVrnnNAvDeZgEA2Pc9TGvp5jdl5hDEIgnogNtCACEUxBNOMrRCCBMa9GimzbPKvoAKwAIyoZo3CURAACS2zSjKJptMBGj5iVoMXVQQjlMgTC4HG431tWJkgO561eQgPlga5PwUCA%2BjHYQkoAERjkwxpRdwngACwgLgLDbLg%2BpM5TBNqa5jlMM50XypKfnQ4QsPNTQPnCdjXnuCQPNqZ%2B-OC0DiAy4TMROHAGtqXAdKWpK3TNvEHjdLrtFkwlFPdDTdMgNwNieAAzA7dKeAATObStKxNIsLGLEvZT7al%2BU83Ra9k3TLDIMP-YDINZYraGrXLHXJ6txM86tHkbfj6DZTgWDoEAA&format=glimdown
+```gjs
+export const RemoteData = resourceFactory((url) => {
+  let state = 
+    new TrackedObject({ isLoading: true });
+  let controller = new AbortController();
+  
+  return resource(({ on }) => {
+    on.cleanup(() => controller.abort());
 
-[fetch-resource-abort-even]: https://limber.glimdown.com/edit?c=MQAgSgpgtg9gLhAIgQzsgUOgBjg5gKwGcQAbASwDcJ0B6GkAIQCcyIAzEMqABxOggB2aOGRgCQMDrXoALOHG6EAXHVxk4MgK4AjAHQBjGFBoA5TSRIA1GAA8ACjG7myNaNohMAtEwiEYmpn1fGm0SGG0aKGQyAVcody8fPwCgwhpCQJpNERIaH1gETwATVGRdOEJ0Lm4YJjgQAGEjGoFBerYmIxAAcgABXHIoKA8aQx4xNu6AbirxupAAbxA4JmR9AGsIIpAAXxAOrr6BrmGmGhW19Zjcadma%2BaWxXf3OqB7etxHYIrI2ViZbtVavUlgAVVYbLYAeW0%2BAg%2BnqewOb26F0hRU82k0ZBIcE8MUIgLmIJASX8gQgADE1nBagBPAA0pN85KCz2RPU%2BiRZKV8t0whgEhHqARIlNqIAAvCAABRkIoASilAD4QFg5AplHRCAB3ZDcMi6IoQCg0fUubgQRx8GgAEgW8p2WBm6EFwvA0HgSFKUuZyQp1IR9JlMtFSslqoW6BAzLgAXEZN5Ice4h24cj0ZjpAg9WFqAgvtaOpA4Mu0Nh8LgMqWZEIABkYMgfgJcEplkxNBAmRRkCRO22BOYSLsFTMs9n6oKVjALB5CxBiwBBbTAppCTqzpgy0eZzMxsQGPjIQfcEPpkBTjd8Ji6ZArurbnd7-Y5-QyUNMEhMpaEMi4AS9m2l4zteui-v%2BvYjs%2BMblDIgghkkLSEBA6aIWIyG6EQYiPtBICwfBMolGg555ggug9n2BbSkRyAKrh%2BECDKyCEHSAj6LK55FiAdivLWEAymSJBUCqIDIXAoJcFa2QCSyQldiAACsAAMKkKmp9H6Kgb4hh4nRMCRwgQLoukStKJn6fRfwARYdJniJpFGbWDZNtcvpsL2yFPuOPhxkw4gOWOI4zGmArofUdgeH44jSgAPAgPAkPmyqZgsCzAHw9QypABTemgsqiuKTAgL08pqSAzEgAAPj4ACOnbCpVOw7M%2BqXAL8zJ1b4cC6E5jbNrgTX0bouikH1rmpSVRRNXhw0tQsEAkMhnAcLV9XdRRnaDeOMapatXXkb2na6ABwxbVmqU0L8Z0XRlg0xec0C8ElmDjm69S1gAolQ0WyoOUCcZobwAKQgAATFKkrSkpLoQDY9z1Ma7nmJOiWEMQiCeiAsMIAIRTEE04ytEIiyZr0aKbNs8q%2BgpACMgWaNwREQAAkts0oyiabTnhotY9WzWPfd1aBMLgOYHZRLoxnFj2JQgyXjjFPwUBeqOEJKABE97GkV3CeAALCAuAsNsuD6vr6vy4saXtXKhBfYIywyLzpVndtIAxRFTBRcV8qSqlPOEHz000JbVuXWwg24VLiXuCQodu1mnve8ziBR9tMUxE4cBpwnyx0pakrdH9CTdDnCf6Krhda3O3A2J4ADMIDcHSnig6Xue5xtEB%2BwsAdB81HcJ6lTzdJn2TdI7vMM0zrNNfHCs0DHC3x-dSuW-d8VPXL6DNTgWDoEAA&format=glimdown
+    fetch(url, { signal: controller.signal })
+      .then((response) => {
+        state.status = response.status;
+        return response.json();
+      })
+      .then((data) => state.value = data)
+      .catch((error) => state.error = error)
+      .finally(() => {
+        state.isLoading = false;
+      });
+
+    return state;
+  });
+})
+```
+
+::right::
+
+```gjs
+import { RemoteData } from './remote-data';
+
+<template>
+  {{#let (RemoteData @url) as |request|}}
+    {{#if request.isLoading}}
+      ... loading ...
+    {{/if}}
+
+    {{#if request.value}}
+      Result: {{JSON.stringify request.value}}
+    {{/if}}
+  {{/let}}
+</template>
+```
+
+
+---
+transition: fade
+---
+
+<div class="slide-category">
+
+`fetch`
+
+</div> 
+
+# [`RemoteData`][fetch-demo-1]
+
+<style>
+    .fetch-video {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+    }
+</style>
+
+<video 
+  controls loop 
+  autoplay
+  class="fetch-video"
+  src="/pages/main/examples/recordings/remote-data.webm"></video>
+
+
+[fetch-demo-1]: https://limber.glimdown.com/edit?c=MQAgSgpgtg9gLhAIgQzsgUOgBjg5gKwGcQAbASwDcJ0B6GkAIQCcyIAzEMqABxOggB2aOGRgCQMDrXoALOHG6EAXHVxk4MgK4AjAHQBjGFBoA5TSRIA1GAA8ACjG7myNaNohMAtEwiEYmpn1fGm0SGG0aKGQyAVcody8fPwCgwhpCQJpNERIaH1gETwATVGRdOEJ0Lm4YJjgQAGEjGoFBerYmIxAAcgABXHIoKA8aQx4xNu6AbirxupAAbxA4JmR9AGsIIpAAXxAOrr6BrmGmGhW19Zjcadma%2BaWxXf3OqB7etxHYIrI2ViZbtVavUlgAVVYbLYAeW0%2BAg%2BnqewOb26F0hRU82k0ZBIcE8MUIgLmIJASX8gQgADE1nBagBPAA0pN85KCz2RPU%2BiRZKV8t0whgEhHqARIlNqIAAvCAABRkIoASilAD4QFg5AplHRCAB3ZDcMi6IoQCg0fUubgQRx8GgAEgW8p2WBm6EFwvA0HgSFKUuZyQp1IR9JlMtFSslqoW6BApAg9WFqAgvtaOpA4Mu0Nh8LgMqWZEIABkYMgfgJcEplkxNBAmRRkCRqxWBOYSLsFTMY3x6oKVjALB5kxBUwBBbTAppCTr9pgy9vRkDznxwALiMm8kOPcQ7cOR%2BcxsQGPjIZvcEM7kA9qd8Ji6ZBjuqzucxmN7-Zx-QyUNMEhMpaEMi4AI9YVpefbXro-6AfWbavjG5QyIIIZJC0hAQOeUbPphIAJggEHCJoxDSshYioXhqAER2WExkuK5%2BihEC6EQYizpRmHbrBIDwYhMolGg544QxdYNkm0q8cgCocQYqAfiGHidEw-HCAxckStKKkKZJfxARYdJniqiwcTGAm6PmRYltcvpsPWqGsc%2B24uq%2BNFMOIAmUfZ6DuegAA8CA8CQibKvOCwLMAXaypABTemgsqiuKTAgAArAAjAqSrIMQAA%2BPgAI7VsKGU7Dsr7BcAvzMrlvhwCZhbFqWuCFZJui6KQtUWcFvSOnsTW6MVCwQCQqGcBwOV5VVQnVg1VHBSNlW6ONDFAcMk3PsFNC-Mtq1dg1XnnNAvABdgODoEAA&format=glimdown
+
+<!-- 
+I found out that the QR-code generating component that I'm using throws an error when URLs get too long.
+Kinda silly.
+
+But here's a demo!
+
+The source code for this presentation has the direct link to this demo.
+
+There is a bit of extra code in here to 
+allow it to be more interactive and demonstrate the reactivity of the Resource.
+I'm mostly showing it to try to prove this isn't smoke and mirrors.
+
+
+-->
+
+---
+transition: fade
+---
+
+<div class="slide-category">
+
+`fetch`
+
+</div> 
+
+```gjs
+import { resource } from 'ember-resources';
+import { RemoteData } from 'ember-resources/util/remote-data';
+
+const urlFor = (specifier) => `https://swapi.dev/api/${specifier}`;
+
+const LoadData = resource(({ use }) => {
+  const people = use(RemoteData(urlFor('people')));
+  const planets = use(RemoteData(urlFor('planets')));
+  const starships = use(RemoteData(urlFor('starships')));
+
+  return { 
+    get people() { return people.current; }, 
+    get planets() { return planets.current; },
+    get starships() { return starships.current; } 
+  };
+});
+
+<template>
+  {{#let (LoadData) as |requests|}}
+    {{#each-in requests as |label request|}}
+      {{label}}: 
+      {{#if request.isLoading}} ... loading ... {{/if}}
+      {{#if request.value}} {{request.value.results.length}} {{/if}}
+      <br>
+    {{/each-in}}
+  {{/let}}
+</template>
+```
+
+<div class="corner-br">
+<QRCode style="margin-bottom: 30px" size="340" value="https://limber.glimdown.com/edit?c=MQAgSgpgtg9gLhAIgQzsgNCAxjKAHGAZwgBMAoMgA2oHMArQkAGwEsA3CMl-GAJzhABvELwiEYAV15YIIAL4gAZr1wgA5NABGEXgFpR4qTMJqA3Fx78h4aPCSpk8pSqjqtO-WMnSxAeglwLEy%2BorAIuiQOZhQ4AHaEAlJMAGJ8IAC8IAAUhHgQWCyKLDoAlBkAfCCUABZwcHiEAFy%2BvoQA7sh4LAB0JBBsvp0svgAkgrn5hcW8cpTmZHEJIAAyMMgkKGgZIl5GEFlZwhLE8mXplYJkINgw8QJ5MHhMspnH%2B5Bh9mhZSam8WWoHk8IGoSmDzNdFvcmMhYhA4IxXsQsh87JtkD9eCk%2BACnrD4SYwSUITc7iAEsheIRqiwGts3ijbAh0Zjsf81BSqTSGqDwRRrqI4FJYtYrtcQDR4SAgc8smVhILhdKII9nt0sFJRLE4KZ5JgxddJdD8Qi5dZFbwRXi4Qj1ZqINrdXJ0AaJVLOdTaYQzQr4UqPdzCHbeFqdU4xXJzHJiRQADwIfAwhDlMWCQTAZ4CLKrdbosrIRgAH1EAEcJGIEYW5HJXWngBBkFhqroWCLS%2BWEowCyBCzDtEwdmWK1Wa%2BLxWm%2BxAmNXGiB%2BWOhOnCoOO3BuixCDmSK2aNWQN0D8w1tvYjR94e075CtXXdc68v2xXumxkExy3u04%2BEs-X%2BXugYJCYW1nlPOBqg-QQr0UG8FxAWNNF4FMx0vBsmxbWIYMXXxMxvWNfATPFkyoagyCAA&format=glimdown"></QrCode>
+</div>
+
+<!-- 
+
+What's super cool about using Resources to manage data fetching, is that you can 
+then compose them...
+
+...and you still get individual reactivity per resource.
+
+-->
+
+---
+transition: fade
+---
+
+<div class="slide-category">
+
+`fetch`
+
+</div> 
+
+<style>
+    .fetch-video {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+    }
+</style>
+
+<video 
+  controls loop 
+  autoplay
+  class="fetch-video"
+  src="/pages/main/examples/recordings/composable-fetch.webm"></video>
+
+
+<!-- 
+
+When rendered it looks like this,
+
+on the right,
+
+you can see that each request, for people, planets, and starships,
+takes its own amount of time to load.
+
+This can be as fine-grained, or as combined as your need.
+Like, some UX patterns may want fewer loading indicators then what you see here.
+
+
+
+-->

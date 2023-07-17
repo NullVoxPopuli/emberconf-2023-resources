@@ -12,7 +12,7 @@ layout: two-cols
     }
 </style>
 
-```gjs
+```gjs {all|6-10|13-19|21-23}
 class Demo extends Component {
     @tracked lastMessage = null;
 
@@ -43,25 +43,43 @@ class Demo extends Component {
 }
 
 <template>
-    Most recent: <Demo @channelName="Across the SpiderVerse" />
+    Most recent: <Demo @channelName="Visitor to Tatooine" />
 </template>
 ```
 
 <!-- 
-In this example, let's say we want to know the most recent person to have seen
-the new spiderman movie: across the spiderverse.
+In this example, let's say we want to know the most recent person to have visited
+tatooine, the desert planet in the StarWars franchise.
 
 We can assume that the method of retrieving that information exists, and the
 implementation might look a little something like this.
-
 
 this isn't a *lot* of code, but it does require scrolling
 
 !! scroll to the bottom
 !! SCROLLING DOESN"T TRANSFER TO THE PRESENTER SCREEN, move the mouse
 
+!! remember to scroll back to the top
 
-What we are calling a value is "the most recent person to have seen Across the SpiderVerse"
+!! click
+
+we set up the socket and subscribe to messages
+
+!! click
+
+we define how we want to format the last message
+
+!! click
+
+and then handle cleanup
+
+
+Like with the other demos, there is a common theme of responsibility leakage.
+With components, it's very easy to accidentally make a component
+responsible for more than one thing -- and for a single concept, the sub-responsibilities for that concept are spread out everywhere..
+
+What we want is a single-responsibility concept that represents the value
+"the most recent person to visit tatooine"
 -->
 
 ---
@@ -89,7 +107,7 @@ const MostRecent = resourceFactory((channelName) => {
 
 <template>
     Most recent: 
-      {{MostRecent "Across the SpiderVerse"}}
+      {{MostRecent "Visitor to Tatooine"}}
 </template>
 ```
 

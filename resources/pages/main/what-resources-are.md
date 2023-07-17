@@ -60,17 +60,15 @@ src: "./examples/interval.md"
 src: "./examples/websocket.md"
 ---
 
---- 
-
-# Resources used as Modifiers 
-
+---
+src: "./examples/fetch.md"
 ---
 
-# Resources used as Services 
+---
+src: "./examples/modifiers.md"
+---
 
-```js 
-import { service } from 'ember-resources/service';
-
-// ...
-```
+---
+src: "./examples/services.md"
+---
 
