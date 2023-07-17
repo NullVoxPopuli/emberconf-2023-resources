@@ -3,7 +3,97 @@ transition: fade
 layout: two-cols
 ---
 
-# `fetch` <span class="inline-subtitle">before ...</span>
+# [`fetch` <span class="inline-subtitle">before ...</span>][fetch-demo-0]
+
+::left::
+
+<style>
+    .slidev-code-wrapper {
+        max-height: 440px;
+        overflow: auto;
+    }
+</style>
+
+```gjs
+import Component from '@glimmer/component';
+import { cached } from '@glimmer/tracking';
+import { TrackedObject } from 'tracked-built-ins';
+
+export default class RemoteData extends Component {
+  <template>{{yield this.request}}</template>
+
+  #state = new TrackedObject({ isLoading: true });
+
+  @cached
+  get request() {
+    let { url } = this.args;
+
+    (async () => {
+      this.#controller?.abort();
+      await Promise.resolve();
+
+      this.#controller = new AbortController();
+
+      fetch(url, { signal: controller.signal })
+        .then((response) => {
+          this.#state.status = response.status;
+          return response.json();
+        })
+        .then((data) => this.#state.value = data)
+        .catch((error) => {
+          this.#state.error = error
+        })
+        .finally(() => {
+          this.#state.isLoading = false;
+        });
+  })();
+
+   return this.#state;
+  }
+    
+  willDestroy() {
+    this.#controller?.abort();
+  }
+}
+```
+
+::right::
+
+```gjs
+import RemoteData from './remote-data';
+
+<template>
+    <RemoteData @url="..." as |request|>
+        {{#if request.isLoading}}
+          ... loading ...
+        {{/if}}
+
+        {{#if request.value}}
+          Result: 
+            {{JSON.stringify request.value.name}}
+        {{/if}}
+    </RemoteData>
+</template>
+```
+
+[fetch-demo-0]: https://limber.glimdown.com/edit?c=MQAgSgpgtg9gLhAIgQzskcAWEQwDYAmIA7sgJ4BQFABrQOYBWAziHgJYBuEFbUADjABOcEAGEY-GADsIUkQDNBEkAHIAAnXZQoEQQHoAxhIEy5KgNw9JwkAG8QB5AexEAviEXL1m3jv1xBJwBrNik6CxArARt7ABVAgyCIAgB5ACMGCAMRd08oVQDg5IBaNIBXNjw4YtCmCyoIAA9okQIIeWQyqoc8ZCYWSFgEFDQQJoQpAhZxSVMRWwoQJZAAHgR%2BXoQAPltbMjYIQgxMNiYAOkEIAEcyiCY4V1cVvXW%2BTYgtqmWQYCM5JTweF0lm%2BwHuqBwAF4QDJiCB4kVUhksnAABT2U4AGRgyAIoToAC4MIJbiBXABKSyLZZqRzOZLUpZ0CAiS43O5o8l2RnfBzSJj4CBnPAwOiolRs273FSUnnfIHzEBlQR4MkgaFYU5nZCCOhMKm85aovpkKQGECormQrbcw2GzXnX7SAL4IGCAD82rSQk5ILt32QpDYIgACkooKchZcBXguJaDf7lg6zk7-q7dOqYRA4QBBb3CcRpwG6eOLOV2%2BQs5yo5V4AA0dhATDYdCkyDwROTqZdxcEZ2brfbZPJ5f9ZywslRqOjJiYECtNoWibtXfBCH7aDgZRY0Jn-KFa%2B3fuX30uW8EUhAe6kc7OzGkpZPywpo7t4%2BwUinBFQyAXxy1YKbkKHDtqS0LfmgI5PksZyOHA1aoroSiCH%2Bq5AWcSFCJmmEoa%2BhpnPIoTtngZBTn%2BS7QUsaEQmcWI4niYSZh0eBzseJ4Umx3wUqWr5nsql7UQgbGuDyPLEJUeCIBySikVyFH2icjp-D2bqesg%2Ba%2BjyIkiRQazQG8EKfN8KyDPASA-iAai1pCABEmBwHAfBMASeh6EwpB8GwZxtBwejIJ5eh8BAMBvBAegAKwAIw2SAfQgAAPpKHLxUZdq7MAbDyFe1xSnAtFMNiuL4o8eEgGc5WsPR%2BJleVr67HomUleW6WZdl7L3GcIF4LcJXLiGugClIRK7AAUgAyikAByG6CPimVkG1uWdaBQptjovVpbYDXyBtSzPKZww-p8zyvO8nw0LQFBAA&format=glimdown
+
+<!-- 
+
+Here, same as before, we have a long file
+
+!! scroll, skim it
+
+this is quite a bit of code -- let's see what all it does
+
+We're trying to handle loading state, error state, reactivity,
+and we want to have stable reference to this state, so at-cached is needed,
+we also need to handle cleanup, the combination of AbortController + willDestroy provides that...
+but also _reactive_ cleanup as the URL argument changes.
+
+-->
+
+
 
 ---
 transition: fade
@@ -114,7 +204,7 @@ transition: fade
 
 </div> 
 
-```gjs
+```gjs {all|7-9}
 import { resource } from 'ember-resources';
 import { RemoteData } from 'ember-resources/util/remote-data';
 
@@ -155,6 +245,14 @@ then compose them...
 
 ...and you still get individual reactivity per resource.
 
+
+!! click
+
+Here, we configure RemoteData on 3 different endpoints
+
+note here that this uses an example util from ember-resources.
+fear not! ember-resources is a v2 addon, so if you don't import it, you don't pay for the bytes.
+
 -->
 
 ---
@@ -193,8 +291,9 @@ on the right,
 you can see that each request, for people, planets, and starships,
 takes its own amount of time to load.
 
-This can be as fine-grained, or as combined as your need.
-Like, some UX patterns may want fewer loading indicators then what you see here.
+This can be as fine-grained, or as combined as you need.
+
+Like, some UX patterns may want fewer loading indicators than what you see here.
 
 
 

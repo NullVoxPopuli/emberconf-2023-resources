@@ -121,16 +121,20 @@ have all the context when uploaded and read.
 
 However, when live, links aren't very helpful.
 
-All links will have have QR Codes.
+Allllmost all links will have have QR Codes.
 
 QR Codes will contain links to various documentation and live demos.
 
 
-I did test this with probably one of the more complicated QR codes in here.
+
+
+I did test this with one of the more complicated QR codes in here.
 
 !! click, and then click play on the video
 
 But there are a lot of factors when it comes to QR code scanning
+
+Unfortunately, some links are too long for the QRCode component  I'm using to generate QR Codes, so for those situations I've added video.
 
  --- depending on the spread in the room ----
 

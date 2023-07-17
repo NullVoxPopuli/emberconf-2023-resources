@@ -1,5 +1,6 @@
 --- 
 transition: fade
+layout: center
 ---
 
 # Resources used as Modifiers 
@@ -17,7 +18,8 @@ transition: fade
 
 <div class="slide-category">Resources used as Modifiers</div> 
 
-```gjs
+```gjs {all|6-13|5-16|4|4,21|all}
+import { resource } from 'ember-resources';
 import { modifier } from 'ember-resources/modifier';
 
 const intensify = modifier((element, intensity) => {
@@ -37,15 +39,57 @@ const intensify = modifier((element, intensity) => {
 
 
 <template>
-    <div {{intensify 2}}>resource pattern intensifies</div>
+    <div {{intensify 2}}>
+        resource pattern intensifies
+    </div>
 </template>
 ```
 
+<style>
+    .modifier-video {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+</style>
+
+<video 
+    v-click="5"
+  controls loop 
+  autoplay
+  class="modifier-video"
+  src="/pages/main/examples/recordings/modifiers.webm"></video>
+
 <!-- 
+
 This will be supported in ember-resources shortly after emberconf, 
 but following in the footsteps of Starbeam, we can do modifiers like this.
 
-For those worried about bundle size, fear not!
+!!click
+
+here, we set up an animation effect on an element.
+
+!! click
+
+the important thing is that this resource is the same as any other resource, 
+same API.
+
+!!click 
+
+it's only wrapped in a function that receives an element, 
+
+!! click
+
+and then whatever args that were passed to the modifier.
+
+!! click :: demo shows
+
+This is what the animation looks like
+
+
+
+Now, for those worried about bundle size, fear not!
 ember-resources is a v2 addon, so if you don't import it, you don't pay for the bytes.
 -->
 
