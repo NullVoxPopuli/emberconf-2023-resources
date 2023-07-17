@@ -65,6 +65,10 @@ src: "./examples/fetch.md"
 ---
 
 ---
+src: "./ideas/data-loading-without-problems.md"
+---
+
+---
 src: "./examples/modifiers.md"
 ---
 
@@ -72,3 +76,6 @@ src: "./examples/modifiers.md"
 src: "./examples/services.md"
 ---
 
+---
+src: "./ideas/components.md"
+---

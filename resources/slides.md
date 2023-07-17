@@ -118,10 +118,6 @@ src: ./pages/primitives/rethinking-reactivity.md
 src: ./pages/primitives/resources.md 
 ---
 
-<!--- src: ./pages/primitives/index.md  --->
-<!--- src: ./pages/main/what-problems.md--->
-<!--- src: ./pages/main/octane-patterns-are-not-enough.md --->
-
 ---
 src: ./pages/main/what-resources-are.md
 ---
