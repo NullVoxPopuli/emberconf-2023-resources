@@ -147,6 +147,22 @@ import { RemoteData } from './remote-data';
 </template>
 ```
 
+<!-- 
+
+When using resources, we can can co-locate and focus on a single responsibility.
+
+This code doesn't scroll, _and_
+
+we can handle all the capabilities we mentioned on the previous slide
+
+- loading state
+- error state,
+- reactively responding to URL changes
+- and cancelling the request when we no longer need it
+
+
+-->
+
 
 ---
 transition: fade

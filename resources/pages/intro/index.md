@@ -107,6 +107,7 @@ layout: center
 </style>
 
 <video 
+    autoplay
   controls loop 
   class="qr-proof-video" 
   v-click="1" 
