@@ -17,7 +17,7 @@ info: >
   [GitHub](https://github.com/NullVoxPopuli/presentation-2023-resources)
 drawings:
   persist: false
-transition: slide-left
+transition: fade # slide-left
 css: unocss
 title: Resources²
 ---
