@@ -5,6 +5,27 @@ layout: center
 
 # Components?
 
+<div v-click>
+
+```jsx
+const AComponent = resource(() => {
+    // "Component State"
+    let count = cell(0);
+    let increment = () => count.current++; 
+
+    // template-only / presentational / stateless component
+    return <>
+        {count}<br>
+        <button onClick={increment}>
+          increment
+        </button>
+    </>;
+}); 
+
+```
+
+</div>
+
 <!-- 
 
 Can a resource also be a component?
@@ -12,8 +33,10 @@ Can a resource also be a component?
 kind of..
 It's more a question of if they _should_ be a component.
 I mean, resources probably don't make sense as components universally across all frameworks.
-
 React, svelte, etc ..  maybe could use resources as components by
+
+!! click
+
 returning a template-only (or presentational, or stateless) component as their value, using the closed over function within the resource _as_ the state.
 
 The main thing is that every framework already has legit component implementations,
@@ -61,9 +84,12 @@ const Demo = resource(() => {
 
 We can do it!
 
-But this is super goofy, and I don't think I'd recommend this to anyone.
-
 I only discovered this was possible a couple days ago.
+
+You can see, however, that at the bottom, of the code snippet, 
+in order to get this to work, 
+you have to invoke the resource like a function
+and then render its return value.
 
 -->
 
@@ -103,11 +129,15 @@ const Demo = resource(() => {
 
 <!--
 
-And what's crazy is that this is only a component-manager implementation away
-from actually working.
+But!
+
+this is only a component-manager implementation away
+(or one focussed night away)
+from actually working as a component.
 
 
 And it really shows how useful the `<template>` syntax is.
+
 I mean, this wouldn't at all be possible with classic two-file syntax.
 
 

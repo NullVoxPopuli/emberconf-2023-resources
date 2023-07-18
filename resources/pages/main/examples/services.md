@@ -88,7 +88,8 @@ class Demo extends Component {
 <!-- 
 
 We can define a resource that has some state, 
-that state will be a number.
+for brevity, that state will be a number -- but it could be any service you can think of.
+
 With this resource we can return a getter to get the current value,
 as well as a method to increment that value.
 
@@ -108,7 +109,5 @@ This decorator is what does the linking between the resource and the overall app
 and here is what it looks like in action
 
 You can see that all the buttons share the same state.
-
-
 
 -->
