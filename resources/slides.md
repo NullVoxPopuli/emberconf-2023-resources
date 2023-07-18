@@ -4,7 +4,6 @@ fonts:
   sans: Comfortaa
 background: /pages/paul-wong-uKWdq9TcaiI-unsplash.jpg
 class: text-center
-# TODO: copy vscode gjs highlighter for shiki, it understands vscode highlighting
 highlighter: shiki
 lineNumbers: false
 info: >
@@ -43,13 +42,6 @@ Notes to hit:
 
 - when talking about Octane, be sure to mention how easy it is to integrate with vanilla JS -- one of the easiest frameworks do integrate with vanilla JS
 
-
-TODO:
-- watch some talks, specifically Solid (also components are not primitives)
-- See if Yehuda's latest talk is out, or reference slides
-- show how resources can be components
-
-
 Pitch
 
 Ember Octane is missing primitives, and resources are one such primitive that make dealing working with custom reactive values much easier.
@@ -57,9 +49,6 @@ Ember Octane is missing primitives, and resources are one such primitive that ma
 Tools used for making this presentation
 - https://sli.dev/
 - https://www.the-qrcode-generator.com/
-
-Things to cover:
-- Resources as "Services" (long lifetime)
 
 -->
 

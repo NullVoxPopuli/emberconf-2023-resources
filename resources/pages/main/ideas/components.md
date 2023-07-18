@@ -27,7 +27,7 @@ transition: fade
 
 <small class="related-note">Components?</small>
 
-# We can do it though
+# We can do it
 
 ```gjs
 import { resource, cell } from 'ember-resources';
