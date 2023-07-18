@@ -106,8 +106,10 @@ const Demo = resource(() => {
 And what's crazy is that this is only a component-manager implementation away
 from actually working.
 
-But why would we do this?
-We already have enough changes coming for Polaris to get used to.
+
+And it really shows how useful the `<template>` syntax is.
+I mean, this wouldn't at all be possible with classic two-file syntax.
+
 
 -->
 
