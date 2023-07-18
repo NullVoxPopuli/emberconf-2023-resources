@@ -57,6 +57,10 @@ src: "./examples/interval.md"
 ---
 
 ---
+src: "./examples/composed-interval.md"
+---
+
+---
 src: "./examples/websocket.md"
 ---
 
