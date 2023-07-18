@@ -90,7 +90,7 @@ const Time = resource(({ on }) => {
 
   on.cleanup(() => clearInterval(interval));
 
-  return () => time.current;
+  return time;
 });
 
 <template>
@@ -99,7 +99,7 @@ const Time = resource(({ on }) => {
 ```
 
 
-<QRCode class="qr-code" size="350" value="https://limber.glimdown.com/edit?c=FAEQpgtg9gBAZgJyhGkBGYEGMoDs4wBMADIQMzDAAGNA5gFYDOMANgJYBuYwbEADlAQAXGAG8YCMIygBXbGAA0MLGBYsYAX3hIUAcnSYAtJOlyVjXQG5KOXIxEAVXmBgBeCVNnyAFN-F5NAEo3AD4xYBhlPHsYIWc3ZVUWb1wwAHcYEABDITBvQMDrSNsYtlxchA4s9XdGMCEASXLMKuT80NjnADosOUlyhNSM7Nz8pQBGYinCyki8HpYwLNwZPl9g1zCsRayEJorW7zKD6oLrCI8hOVwYds3OiDAevrBy6w0Z4AAeXP4WHLAIQuolETkeGg03wA9L8%2BP9ckCaFRgEA&format=glimdown"></QRCode>
+<QRCode class="qr-code" size="350" value="https://limber.glimdown.com/edit?c=FAEQpgtg9gBAZgJyhGkBGYEGMoDs4wBMADIQMzDAAGNA5gFYDOMANgJYBuYwbEADlAQAXGAG8YCMIygBXbGAA0MLGBYsYAX3hIUAcnSYAtJOlyVjXQG5KOXIxEAVXmBgBeCVNnyAFN-F5NAEo3AD4xYBhlPHsYIWc3ZVUWb1wwAHcYEABDITBvQMDrSNsYtlxchA4s9XdGMCEASXLMKuT80NjnADosOUlyhNSM7Nz8pQBGYinCyki8HpYwLNwZPl9g1zCsRayEJorW7zKD6oLrCI8hOVxOiDBrDRngAB5c-hYcsBCL0VEnO40GheAHo3nwPrlvjQqMAgA&format=glimdown"></QRCode>
 
 
 <!-- 
@@ -112,3 +112,32 @@ Here we can already see that this looks way less complicated
 
 -->
 
+
+---
+transition: fade
+---
+
+
+<style>
+    .interval-video {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+    }
+</style>
+
+<video 
+  controls loop 
+  autoplay
+  class="interval-video"
+  src="/pages/main/examples/recordings/interval.webm"></video>
+
+<!--
+
+Here is that code rendered.
+
+On the right here you can see that time is progressing steadily, one second at a time
+
+-->

@@ -3,11 +3,15 @@ transition: fade
 layout: center
 ---
 
-# Some  fun things 
+# Some fun things 
 
 <!-- 
 
-So resources, are fun, and here are some somewhat related fun things 
+So resources, are fun, 
+
+and the word "resources" may be a bit overloaded, depending on your background, 
+
+but here are some somewhat related fun things 
 
 -->
 
