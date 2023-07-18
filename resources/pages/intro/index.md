@@ -135,12 +135,14 @@ I did test this with one of the more complicated QR codes in here.
 
 But there are a lot of factors when it comes to QR code scanning
 
-Unfortunately, some links are too long for the QRCode component  I'm using to generate QR Codes, so for those situations I've added video.
+Unfortunately, some links are too long for the QRCode component I'm using.
+
+But almost everything has QR Codes.
 
  --- depending on the spread in the room ----
 
 
-... and since we all just got back from lunch, some of ya'll may be a little sleepy while digesting.
+... and since we all just got back from lunch, some of ya'll may have food-induced sleepiness.
 
 ... and since some QR codes may be hard to scan from the back of the room (like the one in the video here)
 
@@ -150,8 +152,10 @@ I encourage and welcome folks to shift around
  while I'm talking about things so that you can get a clear scan.
 
 
+ If you're watching live online, you also may want to have your phone out
 
  ----------------
+
 
  The slides will be available on GitHub, 
  and published to and viewable from github pages, 
@@ -178,6 +182,7 @@ layout: center
 - 2014-2016: C#, Angular
 - 2016-2019: Node / React / .net Core / C# / F# / Ruby on Rails
 - 2019-2023: Ember.JS
+- 2023: ChatGPT
 
 <!-- 
 This is my programming journey so far

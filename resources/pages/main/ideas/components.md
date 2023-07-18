@@ -11,18 +11,13 @@ Can a resource also be a component?
 
 not really, but also kind of.
 It starts to get a little awkward here.
-I mean, at least not universally across all frameworks.
-lit-html and React might be able use resources as components by
-returning JSX as their value.
+I mean, resources probably don't make sense as components universally across all frameworks.
 
-But many other frameworks, which use templating, such as
-- angular
-- svelte
-- and ember
+lit-element, React, angular, svelte, etc ..  maybe could use resources as components by
+returning a template-only (or presentational, or stateless) component as their value, using the closed over function within the resource _as_ the state.
 
-
-The main thing is that every framework has legit component implementations,
-and 
+The main thing is that every framework already has legit component implementations,
+and those implementations are good at what they do.
 
 -->
 
@@ -155,13 +150,13 @@ layout: center
 
 Here is what the demo looks like.
 
-You can see that the resource still needs to be invoked like a function,
+You can see that, today, the resource still needs to be invoked like a function,
 and that if we only invoke it once, each time we render the component returned from the resource,
 they share the same state.
 
 I don't know if this has any use cases,
 but an important thing to note is that this 
-thing is returning a component.
+is a function that returns a component.
 
 !! click
 
@@ -210,6 +205,27 @@ layout: center
 
 </v-clicks>
 
+
+<style>
+   .logos img { 
+        position: fixed;
+    }
+
+    .logos .ember  { top: 1rem; left: 1rem; width: 250px; }
+    .logos .react  { top: 7rem; left: 10rem; width: 250px; }
+    .logos .preact { top: 14rem; left: 15rem; width: 250px;}
+    .logos .vue    { top: 5rem; left: 20rem; width: 250px;}
+    .logos .svelte { top: 10rem; left: 25rem; width: 250px;}
+
+</style>
+<div class="logos">
+<img class="ember" v-click src="/pages/logos/ember-e-circle-icon-4c.svg" alt="the ember 'e' logo" />
+<img class="react" v-click src="/pages/logos/react.svg" alt="the React logo" />
+<img class="preact" v-click src="/pages/logos/preact.png" alt="the Preact logo" />
+<img class="vue" v-click src="/pages/logos/vue.svg" alt="the Vue logo" />
+<img class="svelte" v-click src="/pages/logos/svelte.png" alt="the svelte logo" />
+</div>
+
 <!--
 
 So re-capping the primitives,
@@ -234,6 +250,33 @@ and now, resources, which represent a value bound to a lifetime
 ...
 
 These can all be authored and shared anywhere.
+
+And that's the main goal of Starbeam.
+We can write our application logic once, 
+data-fetching, UI logic, modifiers... anything reactive...
+
+
+and use it 
+
+
+!!click 
+
+in not only Ember, but  
+
+!!click
+
+React,
+
+!!click Preact, 
+
+!!click Vue, 
+
+!!click Svelte, you name it.
+
+
+It's super exciting, 
+because most other frameworks don't have modifiers,  
+and none of them have resources, as far as I know.
 
 -->
 

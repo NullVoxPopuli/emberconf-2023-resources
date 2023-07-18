@@ -107,6 +107,8 @@ This decorator is what does the linking between the resource and the overall app
 
 and here is what it looks like in action
 
+You can see that all the buttons share the same state.
+
 
 
 -->

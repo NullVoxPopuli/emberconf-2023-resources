@@ -41,11 +41,16 @@ greater ergonomics
 Values - these *could* have cleanup.
 
 !! click<br>
-Modifiers - often have cleanup.
+Modifiers - often has cleanup.
 
 !! click<br>
-and Services - always have cleanup.
+and Services - often has cleanup.
 
+
+Not only do Resources allow us to implement all these 
+concepts in a coherent and concise way, 
+
+they allow us to bring our reactive concepts to the broader JavaScript ecosystem.
 
 
 Let's start with some examples of Resources as Values
