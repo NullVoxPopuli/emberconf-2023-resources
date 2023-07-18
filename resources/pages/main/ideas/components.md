@@ -9,11 +9,11 @@ layout: center
 
 Can a resource also be a component?
 
-not really, but also kind of.
-It starts to get a little awkward here.
+kind of..
+It's more a question of if they _should_ be a component.
 I mean, resources probably don't make sense as components universally across all frameworks.
 
-lit-element, React, angular, svelte, etc ..  maybe could use resources as components by
+React, svelte, etc ..  maybe could use resources as components by
 returning a template-only (or presentational, or stateless) component as their value, using the closed over function within the resource _as_ the state.
 
 The main thing is that every framework already has legit component implementations,

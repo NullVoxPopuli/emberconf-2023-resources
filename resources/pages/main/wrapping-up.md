@@ -91,6 +91,7 @@ need to worry about potential cleanup
 
 - derived data is the secret to performance and clarity
 - resources help you model any situation as derived data.
+- universal primitive 
 - to get started:
 
     ```bash 
@@ -115,13 +116,15 @@ Code
 in much the same way as promises are better than callbacks, 
 resources are better than effects, and other means and managing a lifetime.
 
+Some last thoughts I leave with you before the end here,  
+
 - I didn't explicitly talk about this, but derived data is the secret to performance and clarity.
 - resources help you model any situation as derived data 
 - resources are not effects -- someone has to pull on the resource for it to start
+- resources are part of a plan to bring ember's reactivity to everyone -- through starbeam
 
 
-You can get going right now before 
-I walk off stage with `pnpm add ember-resources`
+You can install this right now and get started before I walk off stage.
 
 -->
 
