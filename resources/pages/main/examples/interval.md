@@ -140,4 +140,6 @@ Here is that code rendered.
 
 On the right here you can see that time is progressing steadily, one second at a time
 
+Now Let's compose this interval like we saw in sample code on a previous slide.
+
 -->

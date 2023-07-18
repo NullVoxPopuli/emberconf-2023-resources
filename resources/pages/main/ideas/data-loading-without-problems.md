@@ -18,9 +18,17 @@ Some folks imperatively manage data as properties on a service, updated from rou
 
 A common thing developers reach for, and something resources make easier, is fetching data within components. However, If not properly managed, this could lead to the n+1 data loading problem, where you render a list, and that list renders a component where each item within that list makes yet another request.
 
-This can be mitigated by implementing the resources to use a backing service to manage a shared cache between the resources, as well as batch requests together to minimize the number of requests.
+Today - This can be mitigated by making the implementation of data-fetching resources use a 
+
+backing service to manage a shared cache between the resources, and also batch requests together to minimize the number of requests.
+
+In yesterday's Keynote, we saw that Resources will soon power 
+the next generation of route-loading behavior, and mitigate waterfall data fetching.
+
+Very exciting!!
 
 -
+
 
 Don't say this live:
 

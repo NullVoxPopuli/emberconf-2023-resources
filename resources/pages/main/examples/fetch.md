@@ -257,7 +257,7 @@ const LoadData = resource(({ use }) => {
 <!-- 
 
 What's super cool about using Resources to manage data fetching, is that you can 
-then compose them...
+then compose them... just like we did with the current time.
 
 ...and you still get individual reactivity per resource.
 
@@ -266,7 +266,7 @@ then compose them...
 
 Here, we configure RemoteData on 3 different endpoints
 
-note here that this uses an example util from ember-resources.
+note here that this uses an example util from ember-resources, `RemoteData`.
 fear not! ember-resources is a v2 addon, so if you don't import it, you don't pay for the bytes.
 
 -->
@@ -306,6 +306,12 @@ on the right,
 
 you can see that each request, for people, planets, and starships,
 takes its own amount of time to load.
+
+!! try to wait for all 3 to show "10"
+
+and it just so happens that the star wars api only returns 10 records at a time.
+
+...
 
 This can be as fine-grained, or as combined as you need.
 
