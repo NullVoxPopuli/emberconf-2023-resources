@@ -14,12 +14,11 @@ and that's ok.
 
 For those that stick to only the what the official documentation recommends, this may all feel experimental and out of reach.
 
-what is a tried solution in open source may even still feel experimental within your organization -- every group of folks adopts knowledge at different speeds, and that's ok.
+However, to help mitigate that feeling, I've been working on some learning materials and tutorials, 
 
+but even then --- within your organization -- every group of folks adopts knowledge at different speeds, and that's ok. I'm happy to help close those gaps, answer questions, you name it.
 
-In any case, the aim here is to solve real problems more efficiently, while also reducing cognitive load on everyone writing their ember apps. 
-
-I will be providing learning materials, and tutorials that folks can use if they want to learn more.
+The goal is to solve real problems more efficiently, while also reducing cognitive load on everyone writing their ember apps. 
 
 -->
 
@@ -150,6 +149,10 @@ glimmer-component with a class -- normally two separate files.
 The idea is that it does not make sense for templates to be a separate concept.
 
 Both examples here are full blown components.
+It's only of a matter of if the component has its own state.
+
+
+SKIP:
 
 I'm not going to get in to the "why" of this change here, 
 but this is the first feature that I know of in Ember's design 
@@ -252,7 +255,7 @@ and the "stuff to be migrated to" is considered a bug.
 
 !! click
 
-Also, I'm planning on keeping support for ember-source@3.28 for as long as I can. I know a good number of folks were caught off guard by some deprecations that came up during the v3 series, so, I want to make sure that folks still on v3 can use the patterns coming in the future.
+Also, I'm committing on keeping support for ember-source@3.28 for as long as I can. I know a good number of folks were caught off guard by some deprecations that came up during the v3 series (I think I heard yesterday that were more than 70 deprecations? a lot), so, I want to make sure that folks still on v3 can use the patterns coming in the future.
 
 --
 

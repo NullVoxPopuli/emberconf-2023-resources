@@ -49,7 +49,7 @@ Instead of at-tracked,
 
 !! click
 
-let's think of and redefine these as values -- the most basic kind of reactive primitive we could possibly have -- these can exist in within functions, outside classes, anywhere -- this will be a theme throughout this new way of thinking about reactivity. 
+let's think of and redefine these as values, making the at-tracked decorator a user of reactive values -- a value the most basic kind of reactive primitive we could possibly have -- these can exist in within functions, outside classes, anywhere -- this will be a theme throughout this new way of thinking about reactivity. 
 
 !! click
 

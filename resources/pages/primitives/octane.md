@@ -7,7 +7,7 @@ layout: center
 
 <ul class="display-list">
     <li v-click="1"><code>@tracked</code></li>
-    <li v-click="2">functions</li>
+    <li v-click="2">functions (helpers)</li>
 </ul>
 
 

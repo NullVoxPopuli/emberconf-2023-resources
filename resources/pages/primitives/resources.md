@@ -29,7 +29,17 @@ What is a resource?
 
 !!click
 
-It is a reactive function, yet represents a value. It is bound to a lifetime, and it may have cleanup.
+
+It is a "Unification of **a lot** of concepts"
+
+- In Ember, they _rationalize_ class-based-helpers, modifiers, services, and routing.
+- Outside Ember, they rationalize hooks and effects.
+- The allow you to derive data in ways that previously would need effect-like behavior
+
+A resource is a reactive function, yet represents a value. 
+
+It is bound to a lifetime and may have cleanup.
+
 -->
 
 ---
@@ -374,6 +384,11 @@ Resources have more ergonomic cleanup
 
 it is co-located with the behavior, 
 which is a goal that willDestroy methods did not care about.
+
+there are no additional imports, 
+which leads to better intellisense and editor assistance
+around this API.
+
 
 -->
 
