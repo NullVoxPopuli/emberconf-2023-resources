@@ -8,7 +8,8 @@ layout: center
 <div v-click>
 
 <h2 style="transform: rotate(-4deg); line-height: 2.5rem">
-ember-data-resources is not Ember Data Resources ::<br> ember-resources can wrap Ember Data's resources for resources providing resources for/within/beside ember-data-resources.
+ember-data-resources is not ember-data resources ::<br> 
+resources on resources, using resources to fetch resources with your resources
 </h2>
 
 </div>
