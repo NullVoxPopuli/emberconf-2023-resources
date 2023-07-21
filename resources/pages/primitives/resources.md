@@ -383,7 +383,7 @@ const Fetch = resource(({ on }) => {
 Resources have more ergonomic cleanup 
 
 it is co-located with the behavior, 
-which is a goal that willDestroy methods did not care about.
+which is a goal that willDestroy methods didn't know to care about.
 
 there are no additional imports, 
 which leads to better intellisense and editor assistance
@@ -415,6 +415,7 @@ transition: fade
 <div class="slide-category">What's a Resource?</div> 
 <div class="related-note">Resources have a lifetime</div>
 
+<div style="transform:scale(1.2)">
 
 ```mermaid 
 %%{init: { 'gitGraph': { 
@@ -442,16 +443,21 @@ gitGraph
     commit
 ```
 
+</div>
+
 
 <!-- 
 
 An application has a lifetime, it has a start and an end.
 During testing, oftentimes, you have one application lifetime per test
 
+It may even be a stripped down lifetime -- only what's needed for rendering a component.
 
-You could visit a route during the lifetime of your application.
-It could be thought of as having its own lifetime,
-as would the components the rendered within.
+
+But, You could visit a route during the lifetime of your application.
+
+That route could be thought of as having its own lifetime,
+as would the components rendered within that route.
 
 This recurses all the way through the rendering tree.
 
@@ -462,8 +468,6 @@ we may have a Resource (or it could be a component or .. something) that fetches
 
 
 When the parent lifetime ends, so do its descendants.
-
-I think some vampyre lore operates this way.
 
 -->
 
@@ -642,9 +646,7 @@ layout: center
 
 Resources can easily be composed together, 
 
-they abstract away the details and inner-workings of the framework
-
-that would otherwise be required to compose utilities
+they abstract away the details and inner-workings of the framework that would otherwise be exposed to your apps.
 
 
 -->
