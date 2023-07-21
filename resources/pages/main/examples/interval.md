@@ -49,8 +49,9 @@ export default class Timer extends Component {
 
 Before diving in to this example, I'm sure the first thing ya'll saw
 was the static on the right
-this is a big QR Code, as it contains all the text on the slide
-and re-directs you to a REPL or Playground where you can play this example..
+this is the first, but not the last gnarly QR Code you'll see.
+
+it re-directs you to a REPL or Playground where you can play with this example..
 
 If you'd like to play along, and your phone happens to not be a telescope, 
 feel free to get closer to scan the QR code.
@@ -67,12 +68,10 @@ This has a number of problems:
 
 !!click 
 
-- we've hacked in a lifecyle event via a set-once property.
+- we've hacked in a lifecycle event via a set-once property.
     the getter is still re-evaluated every time underscore time changes.
     ... and if we were to add tracked data in to the mix, we are at high risk for a memory leak.
 
-
-This ... is a disaster.
 
 -->
 

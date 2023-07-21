@@ -107,7 +107,7 @@ clicks: 5
                 class helpers
                 <ul class="display-list">
                     <li v-click="4">tracked state</li>
-                    <li v-click="5">cleanup</li>
+                    <li v-click="4">cleanup</li>
                 </ul>
             </li>
         </ul>
@@ -167,9 +167,8 @@ These both required framework-specific abstractions to use and build,
 but the class-based version of these classic helpers 
 
 !!click 
-!!click
 
-had cleanup capabilities (albeit, awkwardly, via inheritance).
+had cleanup capabilities though, awkwardly, via inheritance.
 
 -->
 

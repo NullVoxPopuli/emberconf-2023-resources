@@ -22,16 +22,15 @@ Today - This can be mitigated by making the implementation of data-fetching reso
 
 backing service to manage a shared cache between the resources, and also batch requests together to minimize the number of requests.
 
+In today's Keynote on ember-data, we saw that ember-data's Request Manager can be that cache.
+
+There will be demos of this in the near future.
+
+
 In yesterday's Keynote, we saw that Resources will soon power 
 the next generation of route-loading behavior, and mitigate waterfall data fetching.
 
 Very exciting!!
 
--
-
-
-Don't say this live:
-
-I think that ember-data should implement this by default, because it'd be the ember-data cache that the default ember-data experience could benefit from -- similar to TanStack Query.
 -->
 

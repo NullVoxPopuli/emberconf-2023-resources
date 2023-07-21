@@ -138,23 +138,24 @@ but I did test this with one of the more complicated QR codes in here.
 
 !! click, and then click play on the video
 
-and there are a lot of factors when it comes to QR code scanning
-
 soooo... since we all just got back from lunch, some of ya'll may have food-induced sleepiness.
 
 and since some QR codes may be hard to scan from the back of the room (like the one in the video here)
 
-I encourage and welcome folks to shift around 
- while I'm talking about things so that you can get a clear scan.
+I encourage and welcome folks to stand up, shift around, 
+
+get closer to the screens 
+ while I'm talking about things.
 
 
- If you're watching live online, you also may want to have your phone out
+If you're watching live online, you also may want to have your phone out
+
+Though, the QR Codes are supplemental information, so no one needs to feel like they are missing out by not scanning the QR Codes.
 
 
-
- The slides will be available on GitHub, 
- and published to and viewable from github pages, 
- if you want to wait until later to scan / click the QR Codes as well.
+The slides will be available on GitHub, 
+and published to and viewable from github pages, 
+if you want to wait until later to scan / click the QR Codes as well.
 
 -->
 
@@ -170,14 +171,16 @@ layout: center
 
 - 2002+: CSS / HTML / Geocities
 - 2003+: MySpace Customizations 🙃
-- 2006-2007: C++ in video game engine modification
+- 2006-2007: C++ / video game engine modification
 - 2009: VisualBasic.net
-- 2007-2011: BS: Software Engineering / University (Python, Java, C, Ruby)
+- 2007-2011: BS: Software Engineering (Python, Java, C, Ruby)
 - 2010-2014: Ruby on Rails
 - 2014-2016: C#, Angular
 - 2016-2019: Node / React / .net Core / C# / F# / Ruby on Rails
 - 2019-2023: Ember.JS
-- 2023: Node, React, Vue, Ember, ... ChatGPT
+- 2023: ChatGPT
+
+
 
 <!-- 
 This is my programming journey so far

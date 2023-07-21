@@ -84,29 +84,12 @@ const Demo = resource(() => {
 
 <!--
 
-We can do it!
-
-I only discovered this was possible a couple days ago.
+We can do it, too!
 
 You can see, however, that at the bottom, of the code snippet, 
 in order to get this to work, 
 you have to invoke the resource like a function
 and then render its return value.
-
--->
-
---- 
-transition: fade
----
-
-<img src="/pages/main/science.jpg">
-
-<!--
-
-This is one of my favorite quotes about doing goofy things.
-
-
-But science is pretty fun, so let's keep going.
 
 -->
 
@@ -157,6 +140,21 @@ from actually working as a component.
 And it really shows how useful the `<template>` syntax is.
 
 I mean, this wouldn't at all be possible with classic two-file syntax.
+
+-->
+
+--- 
+transition: fade
+---
+
+<img src="/pages/main/science.jpg">
+
+<!--
+
+This is one of my favorite quotes about doing goofy things.
+
+
+But science is pretty fun, so let's keep going.
 
 -->
 

@@ -60,6 +60,7 @@ What does a resource look like?
 ---
 layout: default
 transition: fade
+clicks: 7
 ---
 
 <div class="slide-category">What's a Resource?</div> 
@@ -67,7 +68,7 @@ transition: fade
 <br>
 <br>
 
-```gjs {all|4|5,7|12-14|9} 
+```gjs {all|4|5,7|12-14|9|all} 
 import { resource, cell } from 'ember-resources';
 
 const Clock = resource(({ on }) => {
@@ -83,6 +84,28 @@ const Clock = resource(({ on }) => {
 	It is: <time>{{Clock}}</time>
 </template>
 ```
+
+<div v-click="6" style="position: fixed; top: 6rem;">
+
+```gjs 
+import { Resource, Cell } from '@starbeam/universal';
+
+const Clock = Resource(({ on }) => {
+	let time = Cell(new Date());
+	let interval = setInterval(() => time.current = new Date(), 1000);
+
+	on.cleanup(() => clearInterval(interval));
+
+	return time;
+});
+
+<template>
+	It is: <time>{{Clock}}</time>
+</template>
+```
+
+</div>
+
 
 <div class="corner-br">
 <QRCode class="qr-code" size="240" value="https://tutorial.glimdown.com/2-reactivity/5-resources?showAnswer=1">Live demo</QRCode>
@@ -117,6 +140,17 @@ In this case, it's a small component.
 
 Lastly the time is returned.
 The renderer inherently knows how to render cells as their values.
+
+
+!! click
+
+Looking at the codesnippet on the slide here
+
+!! click
+
+This is the Starbeam version.
+The only thing that changes is the import.
+
 
 -->
 
@@ -215,8 +249,9 @@ Due how how ember's plain function invocation works,
 !! click
 
 we need a wrapper function to handle receiving arguments.
+This is because ember doesn't have public APIs for tweaking how plain functions are invoked from templates.
 
-It is intended to "just be a function" though 
+It is intended to "just be a function" though, and "making it just work" will be part of the process of implementing starbeam. 
 
 there is nothing magic going on here that a user of this would need to be concerned about.
 
@@ -308,6 +343,10 @@ class Modal extends Component {
 }
 ```
 
+<div class="corner-br">
+<QRCode size="200" value="https://api.emberjs.com/ember/5.1/classes/Helper/methods/willDestroy?anchor=willDestroy"></QRCode>
+</div>
+
 <!-- 
 
 Cleanup, in general, is a concept we're likely used to.
@@ -343,6 +382,11 @@ class Modal extends Component {
   }
 }
 ```
+
+<div class="corner-br">
+<QRCode size="200" value="https://api.emberjs.com/ember/5.1/functions/@ember%2Fdestroyable/registerDestructor"></QRCode>
+</div>
+
 
 <!-- 
 
@@ -503,6 +547,7 @@ If you've ever done this yourself, it's *a* . *lot* . *of* . *work*
 ---
 transition: fade
 layout: center
+clicks: 4
 ---
 
 <div class="slide-category">What's a Resource?</div> 
@@ -528,6 +573,20 @@ class Demo extends Component {
 
 }
 ```
+
+
+<div v-click="1" style="position: fixed; top: 1rem; left: 1rem;">
+<QRCode size="200" value="https://api.emberjs.com/ember/5.1/functions/@glimmer%2Ftracking/cached">@cached</QRCode>
+</div>
+<div v-click="2" style="position: fixed; top: 1rem; right: 1rem;">
+<QRCode size="200" value="https://api.emberjs.com/ember/5.1/functions/@ember%2Fowner/setOwner">setOwner</QRCode>
+</div>
+<div v-click="2" style="position: fixed; bottom: 1rem; right: 1rem;">
+<QRCode size="200" value="https://api.emberjs.com/ember/5.1/functions/@ember%2Fowner/getOwner">getOwner</QRCode>
+</div>
+<div v-click="3" style="position: fixed; bottom: 1rem; left: 1rem;">
+<QRCode size="200" value="https://api.emberjs.com/ember/5.1/functions/@ember%2Fdestroyable/associateDestroyableChild">associateDestroyableChild</QRCode>
+</div>
 
 <!-- 
 

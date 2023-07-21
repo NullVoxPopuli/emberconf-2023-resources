@@ -10,13 +10,17 @@ layout: section
 I'm going to try to get through these real quick, but.
 
 Some may consider parts of this talk  "experimental" .
-and that's ok.
+and that's ok. 
+
+There are certainly a couple gaps today
+- we need more learning materials on resources, patterns, (in and outside of ember)
+- we need to actually implement Starbeam for Ember
 
 For those that stick to only the what the official documentation recommends, this may all feel experimental and out of reach.
 
-However, to help mitigate that feeling, I've been working on some learning materials and tutorials, 
+However, to help mitigate that feeling, I've been working on some learning materials and tutorials. 
 
-but even then --- within your organization -- every group of folks adopts knowledge at different speeds, and that's ok. I'm happy to help close those gaps, answer questions, you name it.
+I'm working to help close the gaps -- I'll try to answer anyone's questions, provide help, you name it.
 
 The goal is to solve real problems more efficiently, while also reducing cognitive load on everyone writing their ember apps. 
 
@@ -40,9 +44,13 @@ layout: center
 
 All examples use the new gjs format.
 
+-- skip for time --
+
 This is, in part, so that I can keep the slides concise, and focused, 
 and not have to specify the file paths of multiple snippets which need to be 
 stitched together to create a single concept.
+
+-- but say this --
 
 Thankfully!, we had a talk yesterday on this new format,
 but here is a quick tl;dr (and maybe recap) for helping translate between old and new in your head:
@@ -187,7 +195,7 @@ All of this is my opinion --
 
 !! click 
 
-but I'm comitted to these opinions, 
+but I'm committed to these opinions, 
 I mean, not to say some of these opinions are not shared by others.. but
 I genuinely believe they make not only our ecosystem stronger and better, 
 but the concepts benefit all ecosystems outside of ember as well.
@@ -244,18 +252,18 @@ It's extremely important that there are easy migration paths within the communit
 Programming is hard, and some migration paths are not (and have not been) so easy.
 
 The overall goal for everything I'm working on for and around this talk, Resources, etc 
-is to be a _polyfill_ for Starbeam.
+is to be a _polyfill_ for Starbeam -- I ultimately want Starbeam to be *the* Resource implementation we use, but in this talk, I demonstrate with the library `ember-resources`, because you can install and use it today.  
 
 At the moment, I haven't written any codemods, 
 because there are some design details still being worked out in Starbeam.
 
 But  
-Any behavioral difference between my libraries 
-and the "stuff to be migrated to" is considered a bug.
+Any behavioral difference between my library, `ember-resources` 
+and Starbeam is considered a bug.
 
 !! click
 
-Also, I'm committing on keeping support for ember-source@3.28 for as long as I can. I know a good number of folks were caught off guard by some deprecations that came up during the v3 series (I think I heard yesterday that were more than 70 deprecations? a lot), so, I want to make sure that folks still on v3 can use the patterns coming in the future.
+I'm committing on keeping support for ember-source@3.28 for as long as I can. I know a good number of folks were caught off guard by some deprecations that came up during the v3 series (I think I heard yesterday that were more than 70 deprecations? a lot), so, I want to make sure that folks still on v3 can use the patterns coming in the future.
 
 --
 

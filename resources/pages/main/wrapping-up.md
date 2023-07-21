@@ -16,8 +16,6 @@ resources on resources, using resources to fetch resources with your resources
 
 <!-- 
 
-So resources, are fun, 
-
 and the word "resources" may be a bit overloaded, depending on your background, 
 
 !! click
@@ -38,11 +36,13 @@ transition: fade
 <blockquote class="big">
 
 This proposal intends to address a common pattern in software development **regarding the lifetime** and management of various resources (memory, I/O, etc.). This pattern generally includes the allocation of a resource and the ability to explicitly release critical resources. 
-  [^tc39-explicit-resource-management]
 
 </blockquote>
 
-[^tc39-explicit-resource-management]: https://github.com/tc39/proposal-explicit-resource-management
+<div class="corner-br">
+<QRCode size="200" value="https://github.com/tc39/proposal-explicit-resource-management"></QRCode>
+</div>
+
 
 <!-- 
 
@@ -81,6 +81,8 @@ layout: center
 
 <!-- 
 
+-- skip this slide if low on time --
+
 Here is a post about TypeScript's implementation.
 
 The mechanics of this are a **smidge** different from Ember's Resources, 
@@ -93,6 +95,42 @@ need to worry about potential cleanup
 
 ---
 
+# What's left?
+
+<v-clicks class="big-list">
+
+- prototype Starbeam Ember Renderer
+- Integrate Starbeam deep within `@glimmer/*` (changing the _implementation_ of @glimmer/tracking)
+- ensure parity between Starbeam and `ember-resources`
+- codemods
+- RFCs
+
+</v-clicks>
+
+<!-- 
+
+So, what's left?
+
+!! click
+
+Mainly, I need to do more work with Starbeam itself, 
+
+!!click 
+
+get in in to @glimmer, 
+
+!!click  
+!!click
+
+and write some codemods for folks using `ember-resources`, 
+
+!!click
+
+...and put up some RFCs... because (i mean, at least I think that) the whole way we thinking about reactivity has become a real cohesive story and is quite a bit more buttoned up since Octane's release.
+
+-->
+
+---
 
 # tl;dr: 
 
@@ -128,7 +166,7 @@ Code
 <!--
 
 in much the same way as promises are better than callbacks, 
-resources are better than effects, and other means and managing a lifetime.
+resources are better than effects or other ways of working with lifetimes
 
 Some last thoughts I leave with you before the end here,  
 

@@ -91,9 +91,8 @@ We can define a resource that has some state,
 for brevity, that state will be a number -- but it could be any service you can think of.
 
 With this resource we can return a getter to get the current value,
-as well as a method to increment that value.
-
-The object is containing both of these things is the value of the resource.
+as well as a method to increment that value. 
+But this could just as easily be an instance of a class.
 
 !!click
     

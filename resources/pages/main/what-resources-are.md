@@ -37,6 +37,7 @@ layout: center
 <h2 v-click="3">Values</h2>
 <h2 v-click="4">Modifiers</h2>
 <h2 v-click="5">Services</h2>
+<h2 v-click="6">Routes</h2>
 </div>
 
 
@@ -65,7 +66,11 @@ We can manage the lifetime of Modifiers.
 
 !! click<br>
 
-And we can manage the lifetime of services.
+Services
+
+!! click
+
+Routes
 
 
 Not only do Resources allow us to implement all these 
