@@ -31,13 +31,15 @@ const AComponent = resource(() => {
 Can a resource also be a component?
 
 kind of..
-It's more a question of if they _should_ be a component.
-I mean, resources probably don't make sense as components universally across all frameworks.
-React, svelte, etc ..  maybe could use resources as components by
 
 !! click
 
+In React, it may look like this.
+
 returning a template-only (or presentational, or stateless) component as their value, using the closed over function within the resource _as_ the state.
+
+
+_however_...
 
 The main thing is that every framework already has legit component implementations,
 and those implementations are good at what they do.
@@ -97,6 +99,22 @@ and then render its return value.
 transition: fade
 ---
 
+<img src="/pages/main/science.jpg">
+
+<!--
+
+This is one of my favorite quotes about doing goofy things.
+
+
+But science is pretty fun, so let's keep going.
+
+-->
+
+
+--- 
+transition: fade
+---
+
 <small class="related-note">Components?</small>
 
 # We can do it
@@ -139,7 +157,6 @@ from actually working as a component.
 And it really shows how useful the `<template>` syntax is.
 
 I mean, this wouldn't at all be possible with classic two-file syntax.
-
 
 -->
 
@@ -196,6 +213,8 @@ we could adapt this to a component manager
 and have the invocation happen automatically for us 
 creating a new closure around the returned component,
 but... I don't know if it's all worth it. 
+
+This isn't something I want to ship -- I guess unless people *really* want it.
 
 anyway... 
 -->
@@ -276,7 +295,8 @@ functions
 
 !! click
 
-and now, resources, which represent a value bound to a lifetime
+and now, resources, which represent a value bound to a lifetime.
+and rationionalize class-based-helpers, modifiers, services.
 
 
 ...

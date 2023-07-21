@@ -5,11 +5,24 @@ layout: center
 
 # Some fun things 
 
+<div v-click>
+
+<h2 style="transform: rotate(-4deg); line-height: 2.5rem">
+ember-data-resources is not Ember Data Resources ::<br> ember-resources can wrap Ember Data's resources for resources providing resources for/within/beside ember-data-resources.
+</h2>
+
+</div>
+
 <!-- 
 
 So resources, are fun, 
 
 and the word "resources" may be a bit overloaded, depending on your background, 
+
+!! click
+
+I don't know if you anyone saw in the discord chat yesterady, but we had some goofy word play.
+
 
 but here are some somewhat related fun things 
 
@@ -118,7 +131,7 @@ resources are better than effects, and other means and managing a lifetime.
 
 Some last thoughts I leave with you before the end here,  
 
-- I didn't explicitly talk about this, but derived data is the secret to performance and clarity.
+- derived data is really really good.
 - resources help you model any situation as derived data 
 - resources are not effects -- someone has to pull on the resource for it to start
 - resources are part of a plan to bring ember's reactivity to everyone -- through starbeam

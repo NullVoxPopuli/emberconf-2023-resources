@@ -88,6 +88,12 @@ const Clock = resource(({ on }) => {
 <QRCode class="qr-code" size="240" value="https://tutorial.glimdown.com/2-reactivity/5-resources?showAnswer=1">Live demo</QRCode>
 </div>
 
+<video 
+  controls loop 
+  autoplay
+  style="position: fixed; bottom: 1rem; left: 1rem;"
+  src="/pages/primitives/examples/clock.webm"></video>
+
 <!-- 
 
 This is what they look like when using ember-resources, 

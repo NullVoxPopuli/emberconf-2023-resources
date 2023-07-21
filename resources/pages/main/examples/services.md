@@ -43,7 +43,7 @@ export const Counter = resource(() => {
 
 <div v-click="1">
 
-```gjs {all|all|8|all}
+```gjs {all|all|8|18|all}
 import Component from '@glimmer/component';
 import { on } from '@ember/modifier';
 import { service } from 'ember-resources/service';
@@ -77,7 +77,7 @@ class Demo extends Component {
     }
 </style>
 
-<div v-click="3">
+<div v-click="4">
 <video 
   controls loop 
   autoplay
@@ -103,6 +103,11 @@ here
 !!click
 
 This decorator is what does the linking between the resource and the overall application.
+
+!! click
+
+To demonstrate that the state is actually a service, I've rendered the component
+3 times here.
 
 !!click
 

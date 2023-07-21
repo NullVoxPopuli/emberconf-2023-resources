@@ -45,6 +45,11 @@ const intensify = modifier((element, intensity) => {
 </template>
 ```
 
+<div style="position: fixed; bottom: 1rem; right: 1rem;">
+<QRCode size="375" value="https://limber.glimdown.com/edit?c=LYewJglgZhCmBOACMtSKiJqBGCDGIAdlIgEwAMpAzAFA0AGjA5gFYDOiANhAG6w0RgAB0wAXRAG9E8WGxABXeHliIAvunghgiAOQ4EAWhlzFytjoDcA4WMmJQkGAjUatu-fCOyFS2QHoHaDh4SzoCQjZxCEJRWAjoAE9EAF57cCCEAApM2E5UONEAGkRo2PjRBIBKFIA%2BSRpERulYUUVCZpNfbKkiNWrkuokGppG88QBDQkFx0Qhe1Nz8mIA6SenYzIBtYZHdu1F4SbYMeGAALkR6A6POGdgADUyAEglSuLYICtUhAA9K%2BjUhR2eyaUmuERO50u4LYt1iAE1nq8Yu9Pglvn8AaogSDdmDDhDMFCrgTYXdHgYXm9yujfv9AcCRgBdYpDXEjMCKGZzQgXACM5HIOPZjU%2BCG5RDYFwAksRomjhXtVJUrIymkRlng8pN5EJsv06mtgBLCJrJspOJlKirgcqrHa6DQADyxYRw2A1YFOyA8STIsofKBJUiqVSe3HGHzKRBCGaxeDtamBuBsL1%2BH2ep1%2BV1Cd2exj0IA&format=glimdown">
+</QRCode>
+</div>
+
 <style>
     .modifier-video {
         position: fixed;

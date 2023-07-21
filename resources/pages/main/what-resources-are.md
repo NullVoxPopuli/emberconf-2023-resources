@@ -24,14 +24,14 @@ layout: center
         opacity: 1 !important;
     }
     .lifetime .slidev-vclick-prior {
-        opacity: 0.5 !important;
+        /* opacity: 0.5 !important; */
     }
 </style>
 
 <h1 v-click="1" class="lifetime">
-  <em v-click="2">➡️  with a lifetime</em>
+  <div v-click="2">➡️  with a lifetime</div>
 </h1>
-<h1 v-click="2" class="derived"><em>➡️  as derived data</em></h1>
+<h1 v-click="2" class="derived"><div>➡️  as derived data</div></h1>
 
 <div style="text-align: right">
 <h2 v-click="3">Values</h2>
@@ -61,11 +61,11 @@ This represents values, we've seen the Clock example, where the value is the cur
 
 !! click<br>
 
-We can manage the setup and teardown of Modifiers as modifiers are a resource scoped to an element.
+We can manage the lifetime of Modifiers.
 
 !! click<br>
 
-And services, are resources scoped to an app
+And we can manage the lifetime of services.
 
 
 Not only do Resources allow us to implement all these 

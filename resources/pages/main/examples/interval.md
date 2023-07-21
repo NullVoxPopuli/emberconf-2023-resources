@@ -7,7 +7,7 @@ layout: two-cols
 
 ::left::
 
-```js 
+```js {all|9,10,11,15} 
 // app/components/timer.js
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
@@ -40,7 +40,9 @@ export default class Timer extends Component {
 {{this.time}}
 ```
 
-<QRCode class="qr-code" size="350" value="https://limber.glimdown.com/edit?c=FAEQpgtg9gBAZgJyhGkBGYEGMoDs4wBMADIQMzDAAGNA5gFYDOMANgJYBuYwbEADlAQAXGAGFkA3GFwjEyGAHIAArXYQImAPQ5%2BeaUIUBuHruEwA3jCEIAhlgDWYACYwAvvCQplq3hoSbrO3s2XFojEwEzSzw3D3lldC1oJzY4Nkxw4DAAD0iRJzA4GwBXFhEsFhtGZgAJMBYWKAB1QRYXHKFpJ2ZxXSkZC2AYGAAeTv5KzoA%2BIeGYABVeMAAuC3MhAAs2RgA6ISXXV1mRgMg%2BSbAZ2aVAh2cYAH19jWNZ2jARZ7AACgBKQbmMFSMG%2BAEJNts9ksEP9zLNARDdl8EDAALwwRgfACSMkwHBsLG%2BfzRUwBgLmiJ2TyWaJgUgA7jAQDZOn9jOS3AAaGAARmI-N%2B7LmR3hMAQH2KCFwVi2u2pGhgAB9FXSwIzmazBbMRcN6WwGuBGNYoABPYlwwHA76U5Gw0XDCpgGwIHGdBD4wk26FawFHYZHI40KjAIA&format=glimdown"></QRCode>
+<div class="corner-br">
+<QRCode size="350" value="https://limber.glimdown.com/edit?c=FAEQpgtg9gBAZgJyhGkBGYEGMoDs4wBMADIQMzDAAGNA5gFYDOMANgJYBuYwbEADlAQAXGAGFkA3GFwjEyGAHIAArXYQImAPQ5%2BeaUIUBuHruEwA3jCEIAhlgDWYACYwAvvCQplq3hoSbrO3s2XFojEwEzSzw3D3lldC1oJzY4Nkxw4DAAD0iRJzA4GwBXFhEsFhtGZgAJMBYWKAB1QRYXHKFpJ2ZxXSkZC2AYGAAeTv5KzoA%2BIeGYABVeMAAuC3MhAAs2RgA6ISXXV1mRgMg%2BSbAZ2aVAh2cYAH19jWNZ2jARZ7AACgBKQbmMFSMG%2BAEJNts9ksEP9zLNARDdl8EDAALwwRgfACSMkwHBsLG%2BfzRUwBgLmiJ2TyWaJgUgA7jAQDZOn9jOS3AAaGAARmI-N%2B7LmR3hMAQH2KCFwVi2u2pGhgAB9FXSwIzmazBbMRcN6WwGuBGNYoABPYlwwHA76U5Gw0XDCpgGwIHGdBD4wk26FawFHYZHI40KjAIA&format=glimdown"></QRCode>
+</div>
 
 
 <!-- 
@@ -62,6 +64,9 @@ This has a number of problems:
 - the teardown, and setup are disjoint... there is a lifecycle hook you have to know aobut.
     since components lend themselves to be overburdened with responsibility, it's very easy 
     intermingle different behaviors' cleanup and setup all over the place within a component. 
+
+!!click 
+
 - we've hacked in a lifecyle event via a set-once property.
     the getter is still re-evaluated every time underscore time changes.
     ... and if we were to add tracked data in to the mix, we are at high risk for a memory leak.
@@ -107,8 +112,11 @@ const Time = resource(({ on }) => {
 Here we can already see that this looks way less complicated
 - setup and teardown of the interval are co-located
 - the entire construct is focused on a single responsibility
-- teardown occurs at the curly-brace level where Time is used, rather than at the component level
-- we don't need to hack in our own lifecycle via a set-once property.
+- teardown occurs at the curly-brace level where Time is used, rather than at the component level.
+
+  the _lifetime_ for this Resource is the curlies.
+
+- and lastly -- we don't need a bespoke lifecycle via a set-once property.
 
 -->
 

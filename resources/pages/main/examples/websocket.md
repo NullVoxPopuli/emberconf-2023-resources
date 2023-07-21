@@ -76,7 +76,7 @@ and then handle cleanup
 
 Like with the other demos, there is a common theme of responsibility leakage.
 With components, it's very easy to accidentally make a component
-responsible for more than one thing -- and for a single concept, the sub-responsibilities for that concept are spread out everywhere..
+responsible for more than one thing 
 
 What we want is a single-responsibility concept that represents the value
 "the most recent person to visit tatooine"

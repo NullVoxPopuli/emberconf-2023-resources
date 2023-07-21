@@ -73,11 +73,9 @@ _REPL_
 
 <!-- 
 
-...and that's it!  
-
 if you want to use the live-editor / REPL / Playground I made, it's here on the right.
 
-on the left is a link to the tutorial I may with the REPL slash Playground
+on the left is a link to the tutorial I made with the REPL slash Playground
 
 it teaches gjs as well as concepts I generally think are important to know for writing ember applications in 2023.
 

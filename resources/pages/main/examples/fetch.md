@@ -14,7 +14,7 @@ layout: two-cols
     }
 </style>
 
-```gjs
+```gjs {all|12,15}
 import Component from '@glimmer/component';
 import { cached } from '@glimmer/tracking';
 import { TrackedObject } from 'tracked-built-ins';
@@ -89,7 +89,12 @@ this is quite a bit of code -- let's see what all it does
 We're trying to handle loading state, error state, reactivity,
 and we want to have stable reference to this state, so at-cached is needed,
 we also need to handle cleanup, the combination of AbortController + willDestroy provides that...
-but also _reactive_ cleanup as the URL argument changes.
+
+but also 
+
+!click
+
+_reactive_ cleanup as the URL argument changes.
 
 -->
 
